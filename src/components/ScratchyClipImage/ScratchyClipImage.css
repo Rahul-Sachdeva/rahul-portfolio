@@ -1,0 +1,8 @@
+.clip-container img {
+    clip-path: url(#scratchyClip);
+    -webkit-clip-path: url(#scratchyClip); /* Safari Support */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
