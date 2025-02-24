@@ -1,0 +1,52 @@
+.bird-animation {
+    animation: flyUpDown 2s infinite ease-in-out alternate;
+  }
+  
+  .bird-paused {
+    animation-play-state: paused;
+  }
+  
+  @keyframes flyUpDown {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-30px);
+    }
+  }
+
+  .bird-animation2 {
+    animation: circularMotion 10s infinite linear;
+  }
+  
+  .bird-paused2 {
+    animation-play-state: paused;
+  }
+  
+  @keyframes circularMotion {
+    0% {
+      transform: translate(0px, 0px) rotate(-10deg);
+    }
+    10% {
+        transform: translate(-30px, -10px) rotate(-15deg);
+    }
+    40% {
+        transform: translate(-190px, -50px) rotate(0deg);
+    }
+    50% {
+        transform: translate(-250px, -30px) rotate(0deg);
+    }
+    60% {
+      transform: translate(-300px, 0px) rotate(+30deg);
+    }
+    80% {
+      transform: translate(-150px, 50px) rotate(0deg);
+    }
+    95%{
+      transform: translate(-20px, 20px) rotate(5deg);  
+    }
+    100% {
+      transform: translate(0px, 0px) rotate(-10deg);
+    }
+  }
+  
