@@ -37,9 +37,9 @@ const Sidebar: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-screen w-[300px] bg-[#151030] text-white flex flex-col items-center py-6 shadow-lg">
+    <div className="h-[100vh] fixed max-h-screen w-[300px] bg-[#151030] text-white flex flex-col items-center shadow-lg">
       {/* Profile */}
-      <div className="text-xl">&lt;Rahul Sachdeva /&gt;</div>
+      <div className="text-xl mt-4">&lt;Rahul Sachdeva /&gt;</div>
       <img src="/profile.png" alt="Profile" className="object-cover" />
 
       {/* Navigation */}
@@ -47,7 +47,7 @@ const Sidebar: React.FC = () => {
         <ul className="flex flex-col w-full">
           <NavItem icon={<FaHome size={29}/>} label="Home" link="/" isActive={currentPath === "/"} />
           <NavItem icon={<GiAchievement size={32}/>} label="Achievements" link="/achievements" isActive={currentPath === "/achievements"} />
-          <NavItem icon={<TbWorld size={30}/>} label="Projects" link="/projects" isActive={currentPath === "/projects"} />
+          <NavItem icon={<TbWorld size={30}/>} label="Skills + Projects" link="/projects" isActive={currentPath === "/projects"} />
           <NavItem icon={<FaBriefcase size={25} />} label="Resume" link="/resume" isActive={currentPath === "/resume"} />
           <NavItem icon={<FaEnvelope size={25} />} label="Contact" link="/contact" isActive={currentPath === "/contact"} />
         </ul>

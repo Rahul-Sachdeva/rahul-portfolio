@@ -6,12 +6,18 @@ import "./Journey.css";
 import Introduction from "../Introduction/Introduction";
 import Education from "../Education/Education";
 import Experience from "../Experience/Experience";
+import FutureGoals from "../FutureGoals/FutureGoals";
+import SkillsProjectsSlide from "../SkillsProjectSlide/SkillsProjectSlide";
 import { IoIosBicycle } from "react-icons/io";
+import AchievementsContributionsTeaser from "../AchievementsContributionsTeaser/AchievementsContributionsTeaser";
 
 const slides = [
   {content: <Introduction/>},
   {content: <Education/>},
-  {content: <Experience/>}
+  {content: <Experience/>},
+  {content: <FutureGoals/>},
+  {content: <SkillsProjectsSlide/>},
+  {content: <AchievementsContributionsTeaser/>},
 ];
 
 export default function GifCarousel() {
@@ -49,16 +55,16 @@ export default function GifCarousel() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-[#050816] flex justify-between items-center">
+    <div className="relative ml-14 z-20 w-full h-screen bg-[#050816] flex justify-between">
       {/* Title and Description */}
       <div>
         {slides[index].content}
       </div>
 
       {/* Carousel */}
-      <div className="flex flex-col justify-between mr-10 items-center">
+      <div className="flex flex-col justify-between mr-10 items-center z-20">
         <p className="text-[30px] flex">View My Journey (<IoIosBicycle size={45}/>)</p>
-        <div className="relative w-[600px] h-[500px] overflow-hidden rounded-[50px]">
+        <div className="relative w-[600px] h-[500px] border-2 border-white overflow-hidden rounded-[50px]">
           {slides.map((slide, i) => (
             <div
               key={i}

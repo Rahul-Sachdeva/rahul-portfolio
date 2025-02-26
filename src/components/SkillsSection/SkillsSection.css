@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hexagon {
+  width: 120px;
+  height: 120px;
+  background-color: #151030;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.hexagon-outer {
+  width: 130px;
+  height: 130px;
+  background-color: blue;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.hexagon:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(0, 174, 255, 0.75);
+}
+
+.hexagon-outer:hover {
+  width: 145px;
+  height: 145px;
+  box-shadow: 0px 0px 15px rgba(0, 174, 255, 0.75);
+}
+
+.neon-text {
+  color: #8A2BE2;
+  text-shadow: 0 0 2px #8A2BE2, 0 0 10px #8A2BE2;
+}

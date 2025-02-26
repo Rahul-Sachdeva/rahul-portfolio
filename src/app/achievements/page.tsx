@@ -6,6 +6,7 @@ import { Autoplay, EffectCoverflow, EffectFlip, Pagination } from "swiper/module
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
+import ContributionSection from "@/components/ContributionSection/ContributionSection";
 // import 'swiper/css/effect-flip';
 // import 'swiper/css/navigation';
 
@@ -72,6 +73,7 @@ const achievements: Achievement[] = [
 
 const Achievements = () => {
   return (
+    <div className="w-[75%] mr-0 z-20 flex flex-col items-center">
     <div className="w-full flex flex-col items-center text-white py-12">
       <h2 className="text-4xl font-bold mb-8">Certifications</h2>
         <style>
@@ -84,19 +86,19 @@ const Achievements = () => {
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
-        spaceBetween={0}
+        spaceBetween={20}
         loop={true}
         centeredSlides={true}  
-        slidesPerView={"auto"}
+        slidesPerView={3}
         coverflowEffect={{
-            rotate: 50,
+            rotate: 30,
             stretch: 0,
-            depth: 100,
+            depth: 50,
             modifier: 1,
-            slideShadows: true, // Disable slide shadows entirely
+            slideShadows: false, // Disable slide shadows entirely
           }}
         autoplay={{
-            delay: 3000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
         pagination={{ clickable: true }}
@@ -105,7 +107,7 @@ const Achievements = () => {
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        className="mySwiper w-full max-w-6xl px-4"
+        className="mySwiper w-full max-w-5xl px-4"
       >
         {achievements.map((achievement, index) => (
           <SwiperSlide key={index}>
@@ -170,6 +172,8 @@ const Achievements = () => {
           </SwiperSlide>
         ))}
       </Swiper> */}
+    </div>
+    <ContributionSection/>
     </div>
   );
 };

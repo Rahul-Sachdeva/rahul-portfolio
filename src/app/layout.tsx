@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import FloatingStars from "@/components/FloatingStars/FloatingStars";
+import Sidebar from "@/components/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <FloatingStars/>
+        <div className="flex">
+          <div className="w-[300px] h-[100vh] max-h-screen z-[100]">
+            <Sidebar/> 
+          </div>
         {children}
+        </div>
       </body>
     </html>
   );
