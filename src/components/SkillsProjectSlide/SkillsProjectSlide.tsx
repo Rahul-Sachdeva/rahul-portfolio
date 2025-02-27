@@ -1,60 +1,95 @@
-const SkillsProjectsSlide = () => {
-    return (
-      <div className="max-w-xl mx-auto bg-gray-900 text-white p-6 rounded-lg shadow-md">
-        {/* Section Title */}
-        <h2 className="text-2xl font-bold text-yellow-400">
-          🚀 Skills & Projects Overview
-        </h2>
-        
-        {/* Overview Text */}
-        <p className="mt-3 text-gray-300 text-sm leading-relaxed">
-          A **fusion of cutting-edge technologies** and **real-world problem-solving.** 
-          From **React-driven UIs** to **backend optimizations**, I love building scalable, efficient, and 
-          visually stunning applications.  
-        </p>
-  
-        {/* Quick Tech Highlights */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          <span className="px-3 py-1 bg-yellow-500 text-gray-900 text-xs font-semibold rounded-full">
-            Full-Stack Development
-          </span>
-          <span className="px-3 py-1 bg-yellow-500 text-gray-900 text-xs font-semibold rounded-full">
-            Role-Based Access Control
-          </span>
-          <span className="px-3 py-1 bg-yellow-500 text-gray-900 text-xs font-semibold rounded-full">
-            React & Tailwind
-          </span>
-          <span className="px-3 py-1 bg-yellow-500 text-gray-900 text-xs font-semibold rounded-full">
-            Node.js & Laravel
-          </span>
-          <span className="px-3 py-1 bg-yellow-500 text-gray-900 text-xs font-semibold rounded-full">
-            Fuzzy Search & Data Handling
-          </span>
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const skills = [
+  { name: 'React', level: 90 },
+  { name: 'Node.js', level: 85 },
+  { name: 'TypeScript', level: 80 },
+  { name: 'Tailwind CSS', level: 75 },
+  { name: 'GraphQL', level: 70 },
+];
+
+const projects = [
+    {
+      title: 'Innovative Web Application',
+      description: 'A cutting-edge web app that streamlines workflow management.',
+      imageUrl: '/sample1.webp',
+      link: '/projects/innovative-web-app',
+    },
+    {
+      title: 'Mobile Solution',
+      description: 'A mobile app that revolutionizes personal finance tracking.',
+      imageUrl: '/sample2.webp',
+      link: '/projects/mobile-solution',
+    },
+    {
+      title: 'E-commerce Platform',
+      description: 'A scalable e-commerce platform with seamless user experience.',
+      imageUrl: '/sample3.webp',
+      link: '/projects/e-commerce-platform',
+    },
+  ];
+
+const SkillsProjectsSection: React.FC = () => {
+  return (
+    <div className="min-h-screen flex flex-col justify-center items-center bg-transparent text-white p-6">
+      <h2 className="text-3xl font-bold mb-8">Skills & Projects</h2>
+
+      <div className="w-full max-w-3xl">
+        {/* Skills Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-semibold mb-4">Skills</h3>
+          <div className="space-y-4">
+            {skills.map((skill) => (
+              <div key={skill.name}>
+                <div className="flex justify-between mb-1">
+                  <span>{skill.name}</span>
+                  <span>{skill.level}%</span>
+                </div>
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <motion.div
+                    className="bg-yellow-500 h-2 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1.5 }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-  
-        {/* Teasing the Projects */}
-        <div className="mt-5">
-          <p className="text-gray-400 text-sm">
-            **Worked on projects involving:**  
-            - 🔍 **AI-Powered Search & Filtering**  
-            - 🔐 **Scalable Role-Based Authentication**  
-            - 🎨 **Pixel-Perfect UI Designs with Tailwind**  
-            - 📊 **Data Visualization & Dashboarding**  
-          </p>
-        </div>
-  
-        {/* CTA Button */}
-        <div className="mt-6 text-center">
-          <a
-            href="/skills-projects"
-            className="inline-block bg-yellow-500 text-gray-900 font-semibold px-6 py-2 rounded-full transition-transform transform hover:scale-105"
+
+        {/* Projects Section */}
+      <h2 className="text-3xl font-bold mb-12">Projects</h2>
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((project) => (
+          <motion.a
+            key={project.title}
+            href={project.link}
+            className="relative group"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            🔥 Explore My Skills & Projects →
-          </a>
-        </div>
+            <div className="overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={project.imageUrl}
+                alt={project.title}
+                className="w-full h-48 object-cover transition-transform duration-300 transform group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <span className="inline-block bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full">
+                  View Project
+                </span>
+              </div>
+            </div>
+          </motion.a>
+        ))}
       </div>
-    );
-  };
-  
-  export default SkillsProjectsSlide;
-  
+      </div>
+    </div>
+  );
+};
+
+export default SkillsProjectsSection;

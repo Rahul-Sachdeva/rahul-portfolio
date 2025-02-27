@@ -55,7 +55,7 @@ export default function GifCarousel() {
   };
 
   return (
-    <div className="relative ml-14 z-20 w-full h-screen bg-[#050816] flex justify-between">
+    <div className="relative ml-14 z-20 w-full h-screen flex justify-between">
       {/* Title and Description */}
       <div>
         {slides[index].content}
