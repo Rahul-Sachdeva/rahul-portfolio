@@ -15,9 +15,9 @@ const slides = [
   {content: <Introduction/>},
   {content: <Education/>},
   {content: <Experience/>},
-  {content: <FutureGoals/>},
   {content: <SkillsProjectsSlide/>},
   {content: <AchievementsContributionsTeaser/>},
+  {content: <FutureGoals/>},
 ];
 
 export default function GifCarousel() {
