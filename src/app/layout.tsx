@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FloatingStars from "@/components/FloatingStars/FloatingStars";
 import Sidebar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,12 +30,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FloatingStars/>
+        <div className="fixed top-0 left-0 w-full h-full z-10">
+          <FloatingStars/>
+        </div>
         <div className="flex">
           <div className="w-[300px] h-[100vh] max-h-screen z-[100]">
             <Sidebar/> 
           </div>
-        {children}
+        <div className="flex flex-col h-full bg-[#050816] w-[calc(100%-300px)]">
+          {children}
+        </div>
         </div>
       </body>
     </html>

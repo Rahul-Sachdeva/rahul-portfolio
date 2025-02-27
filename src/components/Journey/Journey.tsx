@@ -42,7 +42,7 @@ export default function GifCarousel() {
     setIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
-  const handleRadioClick = (slideIndex) => {
+  const handleRadioClick = (slideIndex:number) => {
     if (slideIndex === index) return; // Avoid re-triggering animation if already on the same slide
     setIndex(slideIndex);
     setShowGifs(true);

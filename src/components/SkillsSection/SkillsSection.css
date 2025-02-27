@@ -2,40 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Centering utility */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hexagon {
   width: 120px;
   height: 120px;
-  background-color: #151030;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
+/* Outer hexagon to prevent displacement */
 .hexagon-outer {
   width: 130px;
   height: 130px;
-  background-color: blue;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, box-shadow 0.3s;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
+/* Hover Effects */
 .hexagon:hover {
-  transform: scale(1.1);
+  transform: scale(1);
   box-shadow: 0px 0px 15px rgba(0, 174, 255, 0.75);
 }
 
 .hexagon-outer:hover {
-  width: 145px;
-  height: 145px;
+  transform: scale(1);
+  background-color: blue;
   box-shadow: 0px 0px 15px rgba(0, 174, 255, 0.75);
 }
 
+/* Neon Text Effect */
 .neon-text {
   color: #8A2BE2;
   text-shadow: 0 0 2px #8A2BE2, 0 0 10px #8A2BE2;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Pulsing Neon Effect */
+@keyframes pulse {
+  from {
+    text-shadow: 0 0 2px #8A2BE2, 0 0 10px #8A2BE2;
+  }
+  to {
+    text-shadow: 0 0 4px #8A2BE2, 0 0 15px #8A2BE2;
+  }
 }
