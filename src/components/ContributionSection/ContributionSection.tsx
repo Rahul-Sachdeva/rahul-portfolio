@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   LeetCodeCalendar,
@@ -60,7 +61,7 @@ const ContributionSection = () => {
   const leetcodeUsername = "Rahul_Sachdeva";
 
   return (
-    <div className="bg-gray-900 text-white p-6 mb-10 rounded-lg shadow-lg">
+    <div className="bg-[#2a1d4c] z-20 text-white p-6 mb-10 rounded-lg shadow-lg">
       <h2 className="text-center text-2xl font-bold mb-4">My Contributions</h2>
 
       {/* Tab Buttons */}

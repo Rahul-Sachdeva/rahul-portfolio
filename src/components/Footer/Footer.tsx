@@ -23,7 +23,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="w-full bg-gradient-to-t from-gray-900 to-gray-800 text-white py-8 px-4 text-center flex flex-col items-center shadow-lg"
+            className="w-full bg-[#151030] border-t border-white z-20 text-white py-8 px-4 text-center flex flex-col items-center shadow-lg"
         >
             {/* Navigation Links */}
             <nav className="w-full z-30 flex flex-wrap justify-center gap-6 text-sm font-medium mb-6">

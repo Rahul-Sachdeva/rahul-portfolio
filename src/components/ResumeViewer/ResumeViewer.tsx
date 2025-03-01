@@ -37,7 +37,7 @@ function PdfViewer({ fileUrl }) {
   }
 
   return (
-    <div className="border bg-slate-900 flex flex-col px-2 mx-auto py-2 rounded-lg w-fit gap-2 items-center">
+    <div className="z-20 border bg-slate-900 flex flex-col px-2 mx-auto py-2 rounded-lg w-fit gap-2 items-center">
       <Document
         file={fileUrl ? fileUrl : ""}
         onLoadSuccess={onDocumentLoadSuccess}

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface ExperienceItem {
   company: string;
@@ -10,41 +12,17 @@ interface ExperienceItem {
 
 const experienceData: ExperienceItem[] = [
   {
-    company: "Canada's Wonderland",
-    role: "IT Technician",
+    company: "Training and Placement Cell, GNDEC",
+    role: "Technical Member",
     duration: "Jun. 2023 – Present",
     details: [
-      "Provisioned Windows PCs with MDT, and deployed scripting via PowerShell and ConnectWise.",
-      "Managed AD accounts to propagate ACLs and unified access across in-house apps, Exchange, and SharePoint.",
-      "Configured Cisco CUCM, Unity, and Finesse for stable call routing and voicemail services.",
-      "Handled switch patching and VLAN/routing via PuTTY & SecureCRT, ensuring stable network performance.",
-      "Deployed Oracle POS/KDS/Debit solutions (EMC, Simphony), tracking updates in Jira & Confluence.",
+      "Developed a new version of the TNP website using Next.js for improved performance and scalability.",
+      "Designed and implemented a Contact Management Portal to streamline research and calling operations for company outreach.",
+      "Integrated Role-Based Access Control (RBAC) to manage permissions for different user roles efficiently.",
+      "Optimized database queries and structured API endpoints to enhance data retrieval and user experience.",
+      "Collaborated with team members to ensure seamless deployment and maintenance of the portal.",
     ],
-    logo: "/wonderland.png",
-  },
-  {
-    company: "Canada's Wonderland",
-    role: "IT Technician",
-    duration: "Jun. 2023 – Present",
-    details: [
-      "Provisioned Windows PCs with MDT, and deployed scripting via PowerShell and ConnectWise.",
-      "Managed AD accounts to propagate ACLs and unified access across in-house apps, Exchange, and SharePoint.",
-      "Configured Cisco CUCM, Unity, and Finesse for stable call routing and voicemail services.",
-      "Handled switch patching and VLAN/routing via PuTTY & SecureCRT, ensuring stable network performance.",
-      "Deployed Oracle POS/KDS/Debit solutions (EMC, Simphony), tracking updates in Jira & Confluence.",
-    ],
-    logo: "/wonderland.png",
-  },
-  {
-    company: "Mackenzie Health",
-    role: "System Support Specialist",
-    duration: "2022 – 2023",
-    details: [
-      "Supported IT operations by troubleshooting system issues and maintaining network infrastructure.",
-      "Assisted in software deployment and security patch updates.",
-      "Managed user accounts and access control policies.",
-    ],
-    logo: "/mackenzie.png",
+    logo: "/tnplogo.png",
   },
 ];
 
@@ -52,22 +30,39 @@ const Experience = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedExperience = experienceData[selectedIndex];
 
+  useEffect(() => {
+    AOS.init({ duration: 800 }); // Initialize AOS for scroll animations
+  }, []);
+
   return (
-    <section className="max-w-xl mx-auto p-6 text-white">
-      <h2 className="text-2xl font-bold mb-6">Experience</h2>
+    <section className="max-w-xl mx-auto mt-12 p-6 text-white">
+      <h2 className="text-2xl font-bold mb-6 text-center" data-aos="fade-down">
+        Experience
+      </h2>
 
       {/* Horizontal Navbar for Multiple Experiences */}
-      {experienceData.length > 1 && (
-        <div className="flex overflow-x-auto space-x-4 bg-gray-900 p-3 rounded-lg mb-4">
+      {experienceData.length && (
+        <div
+          className="flex justify-center overflow-x-auto bg-[#2a1d4c] space-x-4 p-3 rounded-lg mb-4"
+          data-aos="fade-up"
+        >
           {experienceData.map((exp, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`flex items-center gap-3 p-3 rounded-lg transition-all whitespace-nowrap ${
-                index === selectedIndex ? "bg-purple-700 text-white" : "bg-gray-800 text-gray-300"
+              className={`flex items-center gap-3 p-3 rounded-lg transition-all transform ${
+                index === selectedIndex
+                  ? "bg-purple-700 text-white scale-105"
+                  : "bg-gray-800 text-gray-300 hover:bg-purple-600 hover:text-white hover:scale-105"
               }`}
             >
-              {exp.logo && <img src={exp.logo} alt={exp.company} className="w-8 h-8 rounded-full" />}
+              {exp.logo && (
+                <img
+                  src={exp.logo}
+                  alt={exp.company}
+                  className="w-8 h-8 rounded-full"
+                />
+              )}
               <div className="text-left">
                 <h3 className="font-semibold">{exp.role}</h3>
                 <p className="text-sm">{exp.company}</p>
@@ -78,13 +73,32 @@ const Experience = () => {
       )}
 
       {/* Main Content */}
-      <div className="bg-gray-900 p-6 rounded-xl">
-        <h3 className="text-xl font-bold">{selectedExperience.role}</h3>
-        <p className="text-gray-400">{selectedExperience.company}</p>
-        <p className="text-sm text-gray-400 mt-1">{selectedExperience.duration}</p>
+      <div
+        className="p-6 bg-[#2a1d4c] rounded-xl transition-opacity duration-500 ease-in-out"
+        key={selectedExperience.company}
+        data-aos="fade-up"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col">
+            <h3 className="text-xl font-bold">{selectedExperience.role}</h3>
+            <p className="text-gray-400">{selectedExperience.company}</p>
+            <p className="text-sm text-gray-400 mt-1">
+              {selectedExperience.duration}
+            </p>
+          </div>
+          {selectedExperience.logo && (
+            <img
+              src={selectedExperience.logo}
+              alt={selectedExperience.company}
+              className="w-16 h-16 rounded-full"
+            />
+          )}
+        </div>
         <ul className="list-disc list-inside mt-4 space-y-2 text-gray-300">
           {selectedExperience.details.map((detail, index) => (
-            <li key={index}>{detail}</li>
+            <li key={index} className="transition-all hover:translate-x-1">
+              {detail}
+            </li>
           ))}
         </ul>
       </div>

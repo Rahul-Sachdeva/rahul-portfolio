@@ -37,7 +37,7 @@ export default function RootLayout({
           <div className="w-[300px] h-[100vh] max-h-screen z-[100]">
             <Sidebar/> 
           </div>
-        <div className="flex flex-col h-full bg-[#050816] w-[calc(100%-300px)]">
+        <div className="flex flex-col h-full bg-[#050816] overflow-hidden w-[calc(100%-300px)]">
           {children}
         </div>
         </div>

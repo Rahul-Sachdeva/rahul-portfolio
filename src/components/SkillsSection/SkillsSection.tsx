@@ -40,18 +40,19 @@ const skills: Skill[] = [
 const softSkills: Skill[] = [
   { icon: "/skills/communication.jpg", name: "Communication" },
   { icon: "/skills/teamwork.png", name: "Teamwork" },
-  { icon: "/skills/problem-solving.png", name: "Problem-Solving" },
-  { icon: "/skills/leadership.jpg", name: "Leadership" },
+  { icon: "/skills/problem-solving.jpg", name: "Problem-Solving" },
+  { icon: "/skills/leadership.webp", name: "Leadership" },
   { icon: "/skills/talent.png", name: "Creativity" },
-  { icon: "/skills/time-management.png", name: "Time Management" },
-  { icon: "/skills/critical-thinking.png", name: "Critical Thinking" },
-  { icon: "/skills/designing.png", name: "UI-UX Designing" },
+  { icon: "/skills/time-management.jpg", name: "Time Management" },
+  { icon: "/skills/critical-thinking.jpg", name: "Critical Thinking" },
+  { icon: "/skills/designing.jpg", name: "UI-UX Designing" },
 ];
 
 export default function SkillsSection() {
   return (
     <TooltipProvider>
       <motion.div
+        id="skills"
         className="skills-container w-3/4 z-20 mx-auto flex flex-col justify-center text-white py-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +61,7 @@ export default function SkillsSection() {
       >
         {/* Skills Heading */}
         <motion.h1
-          className="text-4xl font-extrabold mb-10 text-center neon-text"
+          className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
           animate={{ opacity: [0, 1], scale: [0.9, 1] }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
@@ -72,7 +73,7 @@ export default function SkillsSection() {
           &lt;Programming&gt;
         </motion.h2>
 
-        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-32 gap-y-5">
+        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-20 gap-y-5">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -102,7 +103,7 @@ export default function SkillsSection() {
           &lt;SoftSkills&gt;
         </motion.h2>
 
-        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-32 gap-y-5">
+        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-20 gap-y-5">
           {softSkills.map((skill, index) => (
             <motion.div
               key={index}

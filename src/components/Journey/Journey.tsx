@@ -10,6 +10,7 @@ import FutureGoals from "../FutureGoals/FutureGoals";
 import SkillsProjectsSlide from "../SkillsProjectSlide/SkillsProjectSlide";
 import { IoIosBicycle } from "react-icons/io";
 import AchievementsContributionsTeaser from "../AchievementsContributionsTeaser/AchievementsContributionsTeaser";
+import ProjectsSlide from "../ProjectsSlide/ProjectsSlide";
 
 const slides = [
   {content: <Introduction/>},
@@ -18,6 +19,7 @@ const slides = [
   {content: <SkillsProjectsSlide/>},
   {content: <AchievementsContributionsTeaser/>},
   {content: <FutureGoals/>},
+  {content: <ProjectsSlide/>},
 ];
 
 export default function GifCarousel() {
@@ -57,13 +59,16 @@ export default function GifCarousel() {
   return (
     <div className="relative ml-14 z-20 w-full h-screen flex justify-between">
       {/* Title and Description */}
-      <div>
+      <div className="w-full">
         {slides[index].content}
       </div>
 
       {/* Carousel */}
-      <div className="flex flex-col justify-between mr-10 items-center z-20">
-        <p className="text-[30px] flex">View My Journey (<IoIosBicycle size={45}/>)</p>
+      <div className="flex flex-col mt-16 justify-between mr-10 items-center z-20">
+        <h2 className="text-2xl text-white font-bold flex items-center text-glow">
+          Explore My Journey <IoIosBicycle size={40} className="ml-1 text-white animate-pulse"/>
+        </h2>
+        {/* <p className="text-[30px] text-white flex mt-14">Explore My Journey (<IoIosBicycle size={45}/>)</p> */}
         <div className="relative w-[600px] h-[500px] border-2 border-white overflow-hidden rounded-[50px]">
           {slides.map((slide, i) => (
             <div
@@ -109,7 +114,7 @@ export default function GifCarousel() {
             <button
               key={i}
               onClick={() => handleRadioClick(i)}
-              className={`w-4 h-4 mx-2 rounded-full ${
+              className={`w-6 h-2 mx-2 rounded-full ${
                 i === index ? "bg-white" : "bg-gray-500"
               }`}
             ></button>
@@ -119,7 +124,7 @@ export default function GifCarousel() {
         {/* Next Button with Icon */}
         <button
           onClick={handleNext}
-          className="relative mt-2 bg-gray-800 text-white p-3 rounded-full"
+          className="relative bg-gray-800 text-white rounded-full"
         >
           <FaArrowRight size={24} />
         </button>

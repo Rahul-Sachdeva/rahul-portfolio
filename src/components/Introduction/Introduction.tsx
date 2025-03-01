@@ -36,7 +36,7 @@ const IntroductionSlide = () => {
       >
         <Typewriter
           options={{
-            strings: ['I\'m Rahul Sachdeva.','I\'m a Computer Science Engineer.','I\'m a Full Stack Developer.', 'I\'m a Problem Solver.', 'I\'m a Tech Enthusiast.'],
+            strings: ['I\'m Rahul Sachdeva.','I\'m a Computer Science Engineer.','I\'m a Full Stack Developer.', 'I\'m a Problem Solver.'],
             autoStart: true,
             loop: true,
             deleteSpeed: 50,
