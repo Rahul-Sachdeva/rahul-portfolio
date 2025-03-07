@@ -9,6 +9,7 @@ import {
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { fetchGitHubContributions } from "../FetchGithubStats/FetchGithubStats";
+import { motion } from "framer-motion";
 
 interface Activity {
 	date: string;
@@ -18,51 +19,61 @@ interface Activity {
 
 const ContributionSection = () => {
   const [activeTab, setActiveTab] = useState("combined");
-  const [githubData, setGithubData] = useState<Activity[]>([]);
+  // const [githubData, setGithubData] = useState<Activity[]>([]);
 
-  useEffect(() => {
-    const fetchContributions = async () => {
-      const data = await fetchGitHubContributions();
-      setGithubData(transformGitHubData(data));
-    };
-    fetchContributions();
-  }, []);
+  // useEffect(() => {
+  //   const fetchContributions = async () => {
+  //     const data = await fetchGitHubContributions();
+  //     if(data){
+  //       setGithubData(transformGitHubData(data));
+  //     }
+  //   };
+  //   fetchContributions();
+  // }, []);
 
-  useEffect(() => {
-    console.log("github Data: ", githubData);
-  },[githubData]);
+  // useEffect(() => {
+  //   console.log("github Data: ", githubData);
+  // },[githubData]);
 
-  const transformGitHubData = (apiResponse) => {
-    console.log("Data: ", apiResponse);
-    const weeks = apiResponse.data.user.contributionsCollection.contributionCalendar.weeks;
-    // Flatten the nested structure into a single array of contributions
-    const transformedData:Activity[] = weeks.flatMap((week) =>
-      week.contributionDays.map((day) => ({
-        date: day.date,  // YYYY-MM-DD
-        count: day.contributionCount, // Number of commits
-        level: getContributionLevel(day.contributionCount), // Convert count to level
-      }))
-    );
-    console.log("updated data:", transformedData);
-    return transformedData;
-  };
+  // const transformGitHubData = (apiResponse) => {
+  //   console.log("Data: ", apiResponse);
+  //   const weeks = apiResponse.data.user.contributionsCollection.contributionCalendar.weeks;
+  //   // Flatten the nested structure into a single array of contributions
+  //   const transformedData:Activity[] = weeks.flatMap((week) =>
+  //     week.contributionDays.map((day) => ({
+  //       date: day.date,  // YYYY-MM-DD
+  //       count: day.contributionCount, // Number of commits
+  //       level: getContributionLevel(day.contributionCount), // Convert count to level
+  //     }))
+  //   );
+  //   console.log("updated data:", transformedData);
+  //   return transformedData;
+  // };
   
   // Function to determine level based on contribution count
-  const getContributionLevel = (count) => {
-    if (count === 0) return 0;
-    if (count < 5) return 1;
-    if (count < 10) return 2;
-    if (count < 20) return 3;
-    return 4; // Highest level
-  };
+  // const getContributionLevel = (count) => {
+  //   if (count === 0) return 0;
+  //   if (count < 5) return 1;
+  //   if (count < 10) return 2;
+  //   if (count < 20) return 3;
+  //   return 4; // Highest level
+  // };
   
 
   const githubUsername = "Rahul-Sachdeva";
   const leetcodeUsername = "Rahul_Sachdeva";
 
   return (
+    <div id="contributions" className="pt-10 z-20">
     <div className="bg-[#2a1d4c] z-20 text-white p-6 mb-10 rounded-lg shadow-lg">
-      <h2 className="text-center text-2xl font-bold mb-4">My Contributions</h2>
+      <motion.h1
+          className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
+          animate={{ opacity: [0, 1], scale: [0.9, 1] }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+      >
+        Contributions
+      </motion.h1>
+
 
       {/* Tab Buttons */}
       <div className="flex justify-center space-x-4 mb-6">
@@ -107,6 +118,7 @@ const ContributionSection = () => {
       </>
       }
       {activeTab === "leetcode" && <LeetCodeCalendar username={leetcodeUsername} size="medium" />}
+    </div>
     </div>
   );
 };

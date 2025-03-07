@@ -1,0 +1,21 @@
+/* Customize scrollbar for Chrome, Safari, and Opera */
+.example-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.example-container::-webkit-scrollbar-track {
+  background: #151030; /* Track color */
+  border-radius: 6px;
+}
+
+.example-container::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* Thumb color */
+  border-radius: 6px;
+  border: 3px solid #151030; /* Space around thumb */
+}
+
+/* Customize scrollbar for Firefox */
+.example-container {
+  scrollbar-width: thin;
+  scrollbar-color: #6b7280 #151030;
+}

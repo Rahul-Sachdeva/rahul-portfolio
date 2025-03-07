@@ -7,15 +7,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Footer() {
-    const [showScroll, setShowScroll] = useState(false);
-
-    useEffect(() => {
-        const checkScrollTop = () => {
-            setShowScroll(window.scrollY > 100);
-        };
-        window.addEventListener("scroll", checkScrollTop);
-        return () => window.removeEventListener("scroll", checkScrollTop);
-    }, []);
 
     return (
         <motion.footer
@@ -29,7 +20,7 @@ export default function Footer() {
             <nav className="w-full z-30 flex flex-wrap justify-center gap-6 text-sm font-medium mb-6">
                 {
                 [
-                    { label: "Home", link: "" },
+                    { label: "Home", link: "home" },
                     { label: "Achievements", link: "achievements" },
                     { label: "Skills + Projects", link: "projects" },
                     { label: "Resume", link: "resume" },
@@ -37,7 +28,7 @@ export default function Footer() {
                 ].map((item, index) => (
                     <Link
                         key={index}
-                        href={`//${item.link}`}
+                        href={`#${item.link}`}
                         className="hover:text-yellow-400 cursor-pointer hover:scale-110 transition-opacity duration-200 opacity-80 hover:opacity-100"
                     >
                         {item.label}
@@ -69,19 +60,6 @@ export default function Footer() {
             {/* Tagline & Copyright */}
             <p className="text-sm hover:opacity-100 text-white opacity-80 mb-2">Ideas to Reality, One Line of Code at a Time. 🚀</p>
             <p className="text-xs hover:opacity-100 opacity-80">© {new Date().getFullYear()} Rahul Sachdeva. All Rights Reserved.</p>
-
-            {/* Back to Top Button */}
-            {showScroll && (
-                <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    className="fixed bottom-6 right-6 bg-yellow-400 p-3 rounded-full shadow-lg hover:bg-yellow-300 transition-all animate-bounce"
-                >
-                    <FaArrowUp className="text-gray-900 text-lg" />
-                </motion.button>
-            )}
         </motion.footer>
     );
 }

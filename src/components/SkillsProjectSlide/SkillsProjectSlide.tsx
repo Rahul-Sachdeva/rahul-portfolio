@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const skills = [
   { name: 'DSA in C++', level: 100 },
@@ -16,6 +18,9 @@ const skills = [
 ];
 
 const SkillsProjectsSection: React.FC = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800 }); // Initialize AOS for scroll animations
+  }, []);
   return (
     <div className="min-w-full min-h-screen flex flex-col items-center mt-12 bg-transparent text-white p-6">
       <h2 className="text-2xl font-bold mb-6 text-center" data-aos="fade-down">
@@ -42,15 +47,15 @@ const SkillsProjectsSection: React.FC = () => {
             ))}
           </div>
           <div className="mt-6 w-full flex justify-center">
-            <Link className="mx-auto" href="#skills">
-              <motion.a
+            <Link href="#skills" className="mx-auto" passHref>
+              <motion.button
                 className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5, duration: 0.5 }}
               >
                 View All Skills
-              </motion.a>
+              </motion.button>
             </Link>
           </div>
         </div>

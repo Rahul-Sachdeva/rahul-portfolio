@@ -28,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="z-20 mx-auto flex flex-col md:flex-row items-center justify-between p-8 text-white">
+    <div id="contact" className="z-20 mx-auto flex flex-col md:flex-row items-center justify-between p-8 text-white">
       {/* Left Section: Contact Form */}
       <div className="md:w-1/2 space-y-6 p-6 bg-[#2a1d4c] rounded-lg shadow-lg">
         <h2 className="text-4xl font-bold">Contact.</h2>

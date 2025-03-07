@@ -55,25 +55,25 @@ const IntroductionSlide = () => {
       </motion.p>
 
       {/* View Resume Button */}
-      <Link href="/resume">
-      <motion.a
-        className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-      >
-        View Resume
-      </motion.a>
+      <Link href="#resume" passHref>
+        <motion.button
+          className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
+          View Resume
+        </motion.button>
       </Link>
-      <Link href="/contact" className='mt-6'>
-      <motion.a
-        className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-      >
-        Contact Me
-      </motion.a>
+      <Link href="#contact" className="mt-6" passHref>
+        <motion.button
+          className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
+          Contact Me
+        </motion.button>
       </Link>
     </div>
   );

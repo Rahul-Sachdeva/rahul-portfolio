@@ -27,7 +27,7 @@ const achievements: Achievement[] = [
     date: "Feb 2025",
     skills: ["PyMongo", "NoSQL", "Schema Design", "MongoDB Query Optimization"],
     link: "#",
-    logo: "/mongodb-logo.png",
+    logo: "/skills/mongodb.png",
   },
   {
     title: "GitHub Foundations",
@@ -35,7 +35,7 @@ const achievements: Achievement[] = [
     date: "Sep 2024 - Sep 2027",
     skills: ["Git", "CI/CD", "Repository Management", "SAP Workflow"],
     link: "#",
-    logo: "/github-logo.png",
+    logo: "/skills/git.png",
   },
   {
     title: "Certified Enterprise Scripting Architect",
@@ -43,7 +43,7 @@ const achievements: Achievement[] = [
     date: "Jul 2024",
     skills: ["PAM", "PowerShell", "Windows Server", "Enterprise Architecture"],
     link: "#",
-    logo: "/scripting-logo.png",
+    logo: "/skills/problem-solving.jpg",
   },
   {
     title: "MongoDB Python Developer Path",
@@ -51,7 +51,7 @@ const achievements: Achievement[] = [
     date: "Feb 2025",
     skills: ["PyMongo", "NoSQL", "Schema Design", "MongoDB Query Optimization"],
     link: "#",
-    logo: "/mongodb-logo.png",
+    logo: "/skills/mongodb.png",
   },
   {
     title: "GitHub Foundations",
@@ -59,7 +59,7 @@ const achievements: Achievement[] = [
     date: "Sep 2024 - Sep 2027",
     skills: ["Git", "CI/CD", "Repository Management", "SAP Workflow"],
     link: "#",
-    logo: "/github-logo.png",
+    logo: "/skills/git.png",
   },
   {
     title: "Certified Enterprise Scripting Architect",
@@ -67,7 +67,7 @@ const achievements: Achievement[] = [
     date: "Jul 2024",
     skills: ["PAM", "PowerShell", "Windows Server", "Enterprise Architecture"],
     link: "#",
-    logo: "/scripting-logo.png",
+    logo: "/skills/critical-thinking.jpg",
   },
 ];
 

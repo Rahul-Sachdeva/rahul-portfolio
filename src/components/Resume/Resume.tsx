@@ -1,15 +1,23 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 const PdfViewer = dynamic(() => import("@/components/ResumeViewer/ResumeViewer"), {
     ssr: false,
   });
 
 const ResumePage = () => {
   return (
-    <div className="mx-auto z-20 flex flex-col items-center justify-center min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-6">My Resume</h1>
-
+    <motion.div id="resume" className="mx-auto z-20 flex flex-col items-center justify-center min-h-screen p-8">
+      <motion.h1
+          className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
+          animate={{ opacity: [0, 1], scale: [0.9, 1] }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
+          My Resume
+        </motion.h1>
+      
       {/* PDF Viewer */}
       <PdfViewer
         fileUrl={`resume.pdf`}
@@ -23,7 +31,7 @@ const ResumePage = () => {
       >
         Download Resume
       </a>
-    </div>
+    </motion.div>
   );
 };
 
