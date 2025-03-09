@@ -2,17 +2,21 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
-import { JSX, useRef } from "react";
+import { JSX, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 
 const Stars = () => {
   const ref = useRef<THREE.Points>(null);
   const count = 2000;
-  const positions = new Float32Array(count * 3);
 
-  for (let i = 0; i < count * 3; i++) {
-    positions[i] = (Math.random() - 0.5) * 5; // Spread stars randomly in 3D space
-  }
+  // Memoize positions array so it is created only once
+  const positions = useMemo(() => {
+    const arr = new Float32Array(count * 3);
+    for (let i = 0; i < count * 3; i++) {
+      arr[i] = (Math.random() - 0.5) * 5; // Spread stars randomly in 3D space
+    }
+    return arr;
+  }, [count]);
 
   useFrame(() => {
     if (ref.current) {
