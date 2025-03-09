@@ -1,14 +1,13 @@
-"use client";
+"use client"; // Only if using Next.js
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
-import { useRef, useMemo } from "react";
+import { JSX, useMemo, useRef } from "react";
 import { motion } from "framer-motion";
 
-const Stars = () => {
+const Stars = (props: JSX.IntrinsicElements["points"]) => {
   const ref = useRef<THREE.Points>(null);
-
-  // Use useMemo to ensure positions array is created only once
+  const count = 2000;
   const positions = useMemo(() => {
     const count = 2000;
     const arr = new Float32Array(count * 3);
@@ -16,26 +15,21 @@ const Stars = () => {
       arr[i] = (Math.random() - 0.5) * 5;
     }
     return arr;
-  }, []); // Empty dependency array ensures it runs only once
+  }, []);
+
+  for (let i = 0; i < count * 3; i++) {
+    positions[i] = (Math.random() - 0.5) * 5; // Spread stars randomly in 3D space
+  }
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.y += 0.005;
-      ref.current.rotation.x += 0.002;
+      ref.current.rotation.y += 0.005; // Rotate the stars slowly
+      ref.current.rotation.x += 0.002; // Add subtle movement on x-axis
     }
   });
 
   return (
-    <Points ref={ref}>
-      <bufferGeometry attach="geometry">
-        <bufferAttribute
-          args={[positions, 3]}
-          attach="attributes-position"
-          array={positions}
-          itemSize={3}
-          count={positions.length / 3}
-        />
-      </bufferGeometry>
+    <Points ref={ref} positions={positions} {...props}>
       <PointMaterial size={0.005} color="white" transparent />
     </Points>
   );
