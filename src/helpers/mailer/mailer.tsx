@@ -8,7 +8,7 @@ interface mailCredentials {
 
 export const sendEmail = async({name, email, message}: mailCredentials) => {
     try {
-        var transport = nodemailer.createTransport({
+        let transport = nodemailer.createTransport({
             host: "sandbox.smtp.mailtrap.io",
             port: 2525,
             auth: {
@@ -27,7 +27,13 @@ export const sendEmail = async({name, email, message}: mailCredentials) => {
         const mailResponse = await transport.sendMail(mailOptions);
         return mailResponse;
 
-    } catch (error:any) {
-        throw new Error(error.message)
+    } catch (error: unknown) {
+        let errorMessage = "An unknown error occurred";
+    
+        if (error instanceof Error) {
+            errorMessage = error.message;
+        }
+    
+        throw new Error(errorMessage)
     }
 }

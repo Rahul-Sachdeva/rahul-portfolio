@@ -71,33 +71,4 @@ const AchievementsContributionTeaser = () => {
   );
 };
 
-const GitHubContributionGraph = () => {
-    return (
-        <div className="w-full max-w-xl bg-transparent p-6 mb-8">
-          <h2 className="text-3xl font-bold mb-4">GitHub Statistics</h2>
-          <div className="overflow-hidden rounded-lg shadow-lg">
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=rahul-sachdeva&show_icons=true&theme=radical"
-              alt="GitHub Stats Card"
-              className="w-full"
-            />
-          </div>
-        </div>
-      );
-};
-const LeetCodeStatsCard = () => {
-  return (
-    <div className="w-full max-w-xl bg-transparent p-6">
-      <h2 className="text-3xl font-bold mb-4">LeetCode Statistics</h2>
-      <div className="overflow-hidden rounded-lg shadow-lg">
-        <img
-          src="https://leetcard.jacoblin.cool/rahul_sachdeva?theme=light&font=Karma&ext=heatmap"
-          alt="LeetCode Stats Card"
-          className="w-full"
-        />
-      </div>
-    </div>
-  );
-};
-
 export default AchievementsContributionTeaser;

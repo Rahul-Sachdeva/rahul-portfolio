@@ -51,7 +51,7 @@ const IntroductionSlide = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        Ever wondered how ideas become stunning websites? I'm a Web Developer who loves making that magic happen.
+        Ever wondered how ideas become stunning websites? I&apos;m a Web Developer who loves making that magic happen.
       </motion.p>
 
       {/* View Resume Button */}

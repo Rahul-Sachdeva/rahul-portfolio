@@ -4,6 +4,7 @@ import { FaHome, FaBriefcase, FaEnvelope, FaGithub } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";
 import { TbWorld } from "react-icons/tb";
 import { CgWebsite } from "react-icons/cg";
+import Image from "next/image";
 
 interface NavItemProps {
   icon: ReactNode;
@@ -67,7 +68,7 @@ const Sidebar: React.FC = () => {
     <div className="h-[100vh] fixed max-h-screen w-[300px] bg-[#2a1d4c] text-white flex flex-col items-center shadow-lg">
       <div className="text-xl mt-4">&lt;Rahul Sachdeva /&gt;</div>
       <div className="w-60 h-[264px] mt-2 rounded-[30px] overflow-hidden transform transition-transform duration-300 hover:scale-105">
-        <img src="/rahul-sachdeva.png" alt="Rahul" className="w-full h-full object-cover" />
+        <Image src="/rahul-sachdeva.png" alt="Rahul" fill className="w-full h-full object-cover" />
       </div>
 
       <nav className="w-full mt-4">

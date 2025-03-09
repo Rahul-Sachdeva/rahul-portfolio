@@ -28,17 +28,17 @@ function PdfViewer({ fileUrl}:ResumeViewerProps) {
     setPageNumber(1);
   }
 
-  function goToNextPage() {
-    if (pageNumber < numPages) {
-      setPageNumber(pageNumber + 1);
-    }
-  }
+  // function goToNextPage() {
+  //   if (pageNumber < numPages) {
+  //     setPageNumber(pageNumber + 1);
+  //   }
+  // }
 
-  function goToPreviousPage() {
-    if (pageNumber > 1) {
-      setPageNumber(pageNumber - 1);
-    }
-  }
+  // function goToPreviousPage() {
+  //   if (pageNumber > 1) {
+  //     setPageNumber(pageNumber - 1);
+  //   }
+  // }
 
   return (
     <div className="z-20 border bg-slate-900 flex flex-col px-2 mx-auto py-2 rounded-lg w-fit gap-2 items-center">

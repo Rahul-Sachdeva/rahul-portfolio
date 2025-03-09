@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 interface ExperienceItem {
   company: string;
@@ -57,7 +58,7 @@ const Experience = () => {
               }`}
             >
               {exp.logo && (
-                <img
+                <Image
                   src={exp.logo}
                   alt={exp.company}
                   className="w-8 h-8 rounded-full"
@@ -87,7 +88,7 @@ const Experience = () => {
             </p>
           </div>
           {selectedExperience.logo && (
-            <img
+            <Image
               src={selectedExperience.logo}
               alt={selectedExperience.company}
               className="w-16 h-16 rounded-full"

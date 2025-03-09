@@ -8,6 +8,7 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner"
+import Image from "next/image";
 
  const Earth = () => {
   const earthTexture = useLoader(TextureLoader, "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg");
@@ -42,7 +43,7 @@ const Contact = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    let newErrors = { name: "", email: "", message: "" };
+    const newErrors = { name: "", email: "", message: "" };
     
     if (!name.trim()) newErrors.name = "Name is required";
     if (!email.trim()) newErrors.email = "Email is required";
@@ -75,7 +76,7 @@ const Contact = () => {
       {/* Left Section: Contact Form */}
       <div className="md:w-1/2 space-y-6 p-6 bg-[#2a1d4c] rounded-lg shadow-lg">
         <h2 className="text-4xl font-bold">Contact.</h2>
-        <p>Let's connect! Feel free to reach out through any method below.</p>
+        <p>Let&apos;s connect! Feel free to reach out through any method below.</p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block font-semibold">Name</label>
@@ -112,7 +113,7 @@ const Contact = () => {
           </div>
           <button type="submit" disabled={loading} className="w-full p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded font-bold hover:opacity-80 transition">
           {loading?
-            <img src="/loading.webp" alt="Loading..." className="w-full h-9 object-contain"/> 
+            <Image src="/loading.webp" alt="Loading..." className="w-full h-9 object-contain"/> 
           :
             "Send Message 🚀"
           }

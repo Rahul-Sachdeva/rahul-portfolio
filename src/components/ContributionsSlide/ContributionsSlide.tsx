@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaAward, FaGithub, FaGraduationCap, FaHandsHelping, FaMedal } from 'react-icons/fa';
+import { FaGithub, FaGraduationCap } from 'react-icons/fa';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from 'next/link';
 import './ContributionsSlide.css'
 import { SiLeetcode } from 'react-icons/si';
+import Image from 'next/image';
 
 const ContributionsSlide = () => {
   useEffect(() => {
@@ -46,7 +47,7 @@ const GitHubContributionGraph = () => {
             <a target="_blank" className="flex items-center text-xl mb-4" href="https://github.com/Rahul-Sachdeva">View My<FaGithub className="ml-2" size={25}/></a>
           </div>
           <div className="w-full overflow-hidden shadow-lg">
-            <img
+            <Image
               src="https://github-readme-stats.vercel.app/api?username=rahul-sachdeva&show_icons=true&theme=radical"
               alt="GitHub Stats Card"
               className="w-full"
@@ -63,7 +64,7 @@ const LeetCodeStatsCard = () => {
         <a target="_blank" className="flex items-center text-xl mb-4" href="https://leetcode.com/u/Rahul_Sachdeva">View My<SiLeetcode className="ml-2" size={25}/></a>
       </div>
       <div className="overflow-hidden rounded-lg shadow-lg">
-        <img
+        <Image
           src="https://leetcard.jacoblin.cool/rahul_sachdeva?theme=light&font=Karma&ext=heatmap"
           alt="LeetCode Stats Card"
           className="w-full"

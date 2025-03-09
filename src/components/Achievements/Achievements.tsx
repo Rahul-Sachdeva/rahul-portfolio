@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, EffectFlip, Pagination } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
+import Image from "next/image";
 // import 'swiper/css/effect-flip';
 // import 'swiper/css/navigation';
 
@@ -116,7 +117,7 @@ const Achievements = () => {
               className="bg-[#2a1d4c] rounded-2xl mt-8 mb-8 p-6 h-[400px] shadow-lg border border-gray-600 text-center"
             >
               <div className="flex justify-center">
-                <img src={achievement.logo} alt="Logo" className="w-12 h-12 mb-4" />
+                <Image src={achievement.logo} alt="Logo" width={48} height={48} className="w-12 h-12 mb-4" />
               </div>
               <h3 className="text-xl font-semibold">{achievement.title}</h3>
               <p className="text-sm opacity-80">{achievement.description}</p>

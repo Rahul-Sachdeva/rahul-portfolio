@@ -1,7 +1,5 @@
 "use client";
 import React, { ReactNode } from "react";
-import { FaPython, FaJava, FaReact, FaDocker } from "react-icons/fa";
-import { SiCplusplus, SiJavascript, SiTypescript, SiTailwindcss, SiPostgresql, SiMongodb, SiPrisma } from "react-icons/si";
 import { motion } from "framer-motion";
 import "./SkillsSection.css";
 import Image from "next/image";
