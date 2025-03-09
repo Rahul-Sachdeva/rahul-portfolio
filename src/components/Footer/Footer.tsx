@@ -2,7 +2,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FaInstagram } from "react-icons/fa6";
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

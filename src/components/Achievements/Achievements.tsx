@@ -6,7 +6,6 @@ import { Autoplay, EffectCoverflow, EffectFlip, Pagination } from "swiper/module
 import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
-import ContributionSection from "@/components/ContributionSection/ContributionSection";
 // import 'swiper/css/effect-flip';
 // import 'swiper/css/navigation';
 

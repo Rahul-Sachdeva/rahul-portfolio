@@ -8,14 +8,14 @@ import {
 // import GitHubCalendar from 'react-github-calendar'
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { fetchGitHubContributions } from "../FetchGithubStats/FetchGithubStats";
+// import { fetchGitHubContributions } from "../FetchGithubStats/FetchGithubStats";
 import { motion } from "framer-motion";
 
-interface Activity {
-	date: string;
-	count: number;
-	level: 0 | 1 | 2 | 3 | 4;
-}
+// interface Activity {
+// 	date: string;
+// 	count: number;
+// 	level: 0 | 1 | 2 | 3 | 4;
+// }
 
 const ContributionSection = () => {
   const [activeTab, setActiveTab] = useState("combined");

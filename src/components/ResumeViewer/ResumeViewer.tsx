@@ -7,10 +7,14 @@ import "react-pdf/dist/Page/TextLayer.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
-function PdfViewer({ fileUrl }) {
-  const [numPages, setNumPages] = useState(0);
-  const [pageNumber, setPageNumber] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(0);
+interface ResumeViewerProps{
+  fileUrl: string;
+}
+
+function PdfViewer({ fileUrl}:ResumeViewerProps) {
+  const [numPages, setNumPages] = useState<number>(0);
+  const [pageNumber, setPageNumber] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(0);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
@@ -19,7 +23,7 @@ function PdfViewer({ fileUrl }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  function onDocumentLoadSuccess({ numPages }) {
+  function onDocumentLoadSuccess(numPages:number) {
     setNumPages(numPages);
     setPageNumber(1);
   }
@@ -40,7 +44,7 @@ function PdfViewer({ fileUrl }) {
     <div className="z-20 border bg-slate-900 flex flex-col px-2 mx-auto py-2 rounded-lg w-fit gap-2 items-center">
       <Document
         file={fileUrl ? fileUrl : ""}
-        onLoadSuccess={onDocumentLoadSuccess}
+        onLoadSuccess={() => onDocumentLoadSuccess(numPages)}
       >
         <Page
           renderTextLayer={false}

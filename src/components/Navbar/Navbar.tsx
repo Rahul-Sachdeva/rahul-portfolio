@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { ReactNode, useEffect, useState } from "react";
 import { FaHome, FaBriefcase, FaEnvelope, FaGithub } from "react-icons/fa";
 import { GiAchievement } from "react-icons/gi";

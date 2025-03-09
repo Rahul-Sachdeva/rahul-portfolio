@@ -1,6 +1,5 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 const PdfViewer = dynamic(() => import("@/components/ResumeViewer/ResumeViewer"), {

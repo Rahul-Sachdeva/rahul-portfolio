@@ -5,7 +5,7 @@ import Link from "next/link";
  // Icon for location
  import { FaLocationDot } from "react-icons/fa6";
  import { TextureLoader } from "three";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner"
 
@@ -34,12 +34,12 @@ const Contact = () => {
     );
   };
 
-  const validateEmail = (email) => {
+  const validateEmail = (email:string) => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return re.test(email);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     let newErrors = { name: "", email: "", message: "" };

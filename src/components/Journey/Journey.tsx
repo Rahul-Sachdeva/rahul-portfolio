@@ -39,7 +39,7 @@ export default function GifCarousel() {
     return () => window.removeEventListener("scroll", checkScrollTop);
   }, []);
 
-  const handleNext = (e) => {
+  const handleNext = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -55,7 +55,7 @@ export default function GifCarousel() {
     setIndex((prevIndex) => (prevIndex + 1) % slides.length);
   };
 
-  const handleRadioClick = (slideIndex) => {
+  const handleRadioClick = (slideIndex:number) => {
     if (isTransitioning) return;
     if (slideIndex === index) return;
     setIsTransitioning(true);

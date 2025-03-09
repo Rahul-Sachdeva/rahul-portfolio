@@ -6,7 +6,6 @@ import GifCarousel from "@/components/Journey/Journey";
 import ProjectsSection from "@/components/ProjectsSection/ProjectSection";
 import ResumePage from "@/components/Resume/Resume";
 import SkillsSection from "@/components/SkillsSection/SkillsSection";
-import Image from "next/image";
 
 export default function Home() {
   return (
