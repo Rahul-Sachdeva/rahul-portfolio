@@ -18,9 +18,9 @@ export const sendEmail = async({name, email, message}: mailCredentials) => {
         });
 
         const mailOptions = {
-            from: email, 
-            to: 'rahulsachdeva0305@gmail.com', // list of receivers
-            subject: `Message for you by ${name} on your Portfolio`,
+            from: "rahulsachdeva0305@gmail.com", 
+            to: 'rahulsachdeva112005@gmail.com', // list of receivers
+            subject: `Message for you by ${name} with email - ${email} on your Portfolio`,
             html: message, // html body
         }
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import FloatingStars from "@/components/FloatingStars/FloatingStars";
 import Sidebar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({
           </div>
         <div className="flex flex-col h-full bg-[#050816] overflow-hidden w-[calc(100%-300px)]">
           {children}
+          <Toaster />
         </div>
         </div>
       </body>
