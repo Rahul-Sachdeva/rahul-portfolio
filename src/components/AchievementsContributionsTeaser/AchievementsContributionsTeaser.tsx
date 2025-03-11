@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaAward, FaGraduationCap, FaHandsHelping, FaLaptopCode, FaLightbulb, FaMedal, FaTrophy } from 'react-icons/fa';
+import { FaAward, FaGraduationCap, FaLaptopCode, FaLightbulb, FaTrophy } from 'react-icons/fa';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from 'next/link';

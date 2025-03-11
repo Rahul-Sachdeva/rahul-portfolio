@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 import Link from 'next/link';
 import './ContributionsSlide.css'
 import { SiLeetcode } from 'react-icons/si';
-import Image from 'next/image';
 
 const ContributionsSlide = () => {
   useEffect(() => {
