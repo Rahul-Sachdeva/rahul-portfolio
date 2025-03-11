@@ -1,30 +1,30 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaAward, FaGraduationCap, FaHandsHelping, FaMedal } from 'react-icons/fa';
+import { FaAward, FaGraduationCap, FaHandsHelping, FaLaptopCode, FaLightbulb, FaMedal, FaTrophy } from 'react-icons/fa';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from 'next/link';
 
 const achievements = [
   {
-    title: 'Top Performer Award',
-    description: 'Recognized as the top performer of the year for outstanding contributions.',
-    icon: <FaAward className="text-yellow-500" />,
+    title: "LeetCode Achievements",
+    description: "Solved 450+ questions with a 1700+ contest rating, earning top LeetCode badges.",
+    icon: <FaLaptopCode className="text-yellow-500" />,
   },
   {
-    title: 'Community Service',
-    description: 'Led a community service project that benefited over 500 individuals.',
-    icon: <FaHandsHelping className="text-green-500" />,
+    title: "2nd Place - CTU Ideathon",
+    description: "Secured 2nd position at CT University Ideathon for an innovative project.",
+    icon: <FaLightbulb className="text-green-500" />,
   },
   {
-    title: 'Innovation Medal',
-    description: 'Awarded for developing an innovative solution that increased efficiency by 30%.',
-    icon: <FaMedal className="text-blue-500" />,
+    title: "Hackathon Competitor",
+    description: "Participated in national and regional hackathons like SIH, HackTU 6.0, and Hack-n-Win.",
+    icon: <FaAward className="text-blue-500" />,
   },
   {
-    title: 'Innovation Medal',
-    description: 'Awarded for developing an innovative solution that increased efficiency by 30%.',
-    icon: <FaMedal className="text-blue-500" />,
+    title: "1st Prize - Quizpedia",
+    description: "Won the Quizpedia event at Tech Urja, an intercollege technical competition.",
+    icon: <FaTrophy className="text-red-500" />,
   },
 ];
 

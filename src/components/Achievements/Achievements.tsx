@@ -19,55 +19,70 @@ interface Achievement {
   link: string;
   logo: string;
 }
-
 const achievements: Achievement[] = [
   {
-    title: "MongoDB Python Developer Path",
-    description: "Proof of Completion",
-    date: "Feb 2025",
-    skills: ["PyMongo", "NoSQL", "Schema Design", "MongoDB Query Optimization"],
-    link: "#",
-    logo: "/skills/mongodb.png",
+    title: "LeetCode Achievements",
+    description: "Solved 450+ questions with a 1700+ contest rating, received many top leetcoder badges",
+    date: "Ongoing",
+    skills: ["Data Structures", "Problem Solving", "Optimal Thinking"],
+    link: "#", // Add a LeetCode profile link
+    logo: "/skills/leetcode.png",
   },
   {
-    title: "GitHub Foundations",
-    description: "Professional Certificate",
-    date: "Sep 2024 - Sep 2027",
-    skills: ["Git", "CI/CD", "Repository Management", "SAP Workflow"],
-    link: "#",
-    logo: "/skills/git.png",
+    title: "Hackathons",
+    description: "Competed in National & Regional Hackathons like SIH, Hack-n-Win, HackTU 6.0, GNE Hackathon etc.",
+    date: "Ongoing",
+    skills: ["Rapid Prototyping", "Competitive Coding", "Teamwork & Leadership"],
+    link: "#", // Google Drive link for hackathon certificates
+    logo: "/skills/hackathon.png",
   },
   {
-    title: "Certified Enterprise Scripting Architect",
-    description: "Automation | Connective University",
-    date: "Jul 2024",
-    skills: ["PAM", "PowerShell", "Windows Server", "Enterprise Architecture"],
+    title: "Best Overall Prize Workshop on Game Dev",
+    description: "Awarded Best Overall Prize in a Peer-to-Peer Learning Event. Adventure Game using C# & Unity.",
+    date: "2023",
+    skills: ["Game Development", "Rapid Learning", "Creativity"],
     link: "#",
-    logo: "/skills/problem-solving.jpg",
+    logo: "/skills/unity.png",
   },
   {
-    title: "MongoDB Python Developer Path",
-    description: "Proof of Completion",
-    date: "Feb 2025",
-    skills: ["PyMongo", "NoSQL", "Schema Design", "MongoDB Query Optimization"],
-    link: "#",
-    logo: "/skills/mongodb.png",
+    title: "Skill India Certification AI Training",
+    description: "Certified by Ansh Infotech in Artificial Intelligence training.",
+    date: "2024",
+    skills: ["AI", "Machine Learning", "Deep Learning"],
+    link: "#", // Certification link
+    logo: "/skills/skill_india.jpg",
   },
   {
-    title: "GitHub Foundations",
-    description: "Professional Certificate",
-    date: "Sep 2024 - Sep 2027",
-    skills: ["Git", "CI/CD", "Repository Management", "SAP Workflow"],
+    title: "TNP Cell - Technical & Executive Member",
+    description: "Organized Placement Activities and Made technical projects at Training and Placement Cell, GNDEC.",
+    date: "2024-Present",
+    skills: ["Leadership", "Communication", "Event Management"],
     link: "#",
-    logo: "/skills/git.png",
+    logo: "/tnplogo.png",
   },
   {
-    title: "Certified Enterprise Scripting Architect",
-    description: "Automation | Connective University",
-    date: "Jul 2024",
-    skills: ["PAM", "PowerShell", "Windows Server", "Enterprise Architecture"],
+    title: "Ideathon - 2nd Place",
+    description: "Secured overall Second position in the CT University Ideathon.",
+    date: "2024",
+    skills: ["Innovation", "Idea-Pitching", "Problem-Solving"],
+    link: "#", // Add a drive link if needed
+    logo: "/skills/ideathon.png",
+  },
+  {
+    title: "1st Prize - Quizpedia (Tech Urja 2023)",
+    description: "Won the Quizpedia event at Tech Urja, an intercollege competition.",
+    date: "2023",
+    skills: ["Critical Thinking", "Technical Knowledge", "Fast Decision Making"],
     link: "#",
-    logo: "/skills/critical-thinking.jpg",
+    logo: "/first.png",
+  },
+  {
+    title: "View All Achievements",
+    description: "View all my Certifications including LeetCode Badges, Hackathons, Intercollege Event Certifications, and much more.",
+    date: "Ongoing",
+    skills: ["Competitions", "Problem Solving", "Teamwork"],
+    link: "https://drive.google.com/folderxyz", // Google Drive link to grouped certificates
+    logo: "/skills/prize.png",
   },
 ];
 
@@ -116,10 +131,10 @@ const Achievements = () => {
               transition={{ duration: 0.3 }}
               className="bg-[#2a1d4c] rounded-2xl mt-8 mb-8 p-6 h-[400px] shadow-lg border border-gray-600 text-center"
             >
-              <div className="flex justify-center">
-                <Image src={achievement.logo} alt="Logo" width={48} height={48} className="w-12 h-12 mb-4" />
+              <div className="flex justify-center items-center">
+                <Image src={achievement.logo} alt="Logo" width={48} height={48} className="w-12 h-12 mb-4 rounded bg-white p-[2px]" />
               </div>
-              <h3 className="text-xl font-semibold">{achievement.title}</h3>
+              <h3 className="text-xl font-semibold mb-1">{achievement.title}</h3>
               <p className="text-sm opacity-80">{achievement.description}</p>
               <p className="text-sm opacity-60 mb-4">{achievement.date}</p>
               <ul className="text-xs opacity-80 space-y-1">
