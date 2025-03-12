@@ -7,6 +7,7 @@ interface ProjectCardProps {
   technologies: string;
   image: string;
   link: string;
+  label: string;
   layout: "horizontal" | "vertical";
   extraClass?: string; // ✅ Added this
 }
@@ -17,6 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
   image,
   link,
+  label,
   layout,
   extraClass = "", // ✅ Default to empty if not provided
 }) => {
@@ -39,12 +41,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-gray-300 mt-2">{description}</p>
         <p className="text-sm text-blue-400 mt-2">{technologies}</p>
+        {link=="#"?
         <a
           href={link}
           className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md inline-block hover:bg-blue-700 transition-colors"
         >
-          View Project
+          {label}
         </a>
+        :  
+        <a
+          href={link}
+          target="_blank"
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md inline-block hover:bg-blue-700 transition-colors"
+        >
+          {label}
+        </a>
+        }
       </div>
     </motion.div>
   );

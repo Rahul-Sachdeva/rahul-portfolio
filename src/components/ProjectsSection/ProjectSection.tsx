@@ -11,7 +11,17 @@ const projects = [
       "A robust contact management system for the Training & Placement Cell with role-based access, CSV functionality, and mobile responsiveness. Actively used to eliminate duplicate records and streamline recruiter-student interactions.",
     technologies: "MERN Stack",
     image: "projects/contacts-tnp.png", 
-    link: "#",
+    link: "https://contacts.tnpgndec.com/",
+    label: "View Project",
+  },
+  {
+    title: "Fuzzy Search",
+    description:
+    "AI-powered criminal record management system built for Smart India Hackathon. Features advanced fuzzy matching for duplicate detection, voice-to-text transcription, and comprehensive analytics dashboard for efficient large-scale data retrieval.",
+    technologies: "MERN Stack, Python",
+    image: "projects/fuzzy-search.png", 
+    link: "https://fuzzy-search-eight.vercel.app/home",
+    label: "View Project",
   },
   {
     title: "TNP Website",
@@ -20,14 +30,7 @@ const projects = [
     technologies: "Next.js, Prisma",
     image: "projects/tnp-website.png", 
     link: "#",
-  },
-  {
-    title: "Fuzzy Search",
-    description:
-      "AI-powered criminal record management system built for Smart India Hackathon. Features advanced fuzzy matching for duplicate detection, voice-to-text transcription, and comprehensive analytics dashboard for efficient large-scale data retrieval.",
-    technologies: "MERN Stack, Python",
-    image: "projects/fuzzy-search.png", 
-    link: "#",
+    label: "Deploying Soon...",
   },
   {
     title: "Edustation",
@@ -35,15 +38,8 @@ const projects = [
       "AI-driven e-learning platform with intelligent course recommendations, real-time progress tracking, and interactive assistance. Includes PDF summarization and student engagement analytics, showcasing AI's potential in modern education.",
     technologies: "React, Firebase, AI Integrations",
     image: "projects/edustation.png", 
-    link: "#",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "Sleek, responsive portfolio showcasing projects and skills with smooth Framer Motion animations, projects gallery, blog section, and interactive resume. Continuously evolving with new features.",
-    technologies: "Next.js, Tailwind CSS, Framer Motion",
-    image: "projects/portfolio.png", 
-    link: "#",
+    link: "https://edustation.vercel.app",
+    label: "View Project",
   },
   {
     title: "Club Hub",
@@ -52,6 +48,16 @@ const projects = [
     technologies: "React, Python - Fast API",
     image: "projects/club-hub.png", 
     link: "#",
+    label: "Deploying Soon...",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "Sleek, responsive portfolio showcasing projects and skills with smooth Framer Motion animations, projects gallery, blog section, and interactive resume. Continuously evolving with new features.",
+    technologies: "Next.js, Tailwind CSS, Framer Motion",
+    image: "projects/portfolio.png", 
+    link: "https://rahul-portfolio-lake.vercel.app/",
+    label: "View Project",
   },
   // {
   //   title: "Mystery Message",
@@ -60,6 +66,7 @@ const projects = [
   //   technologies: "Next.js",
   //   image: "", 
   //   link: "#",
+  // label: "",
   // },
   {
     title: "Sports Management System",
@@ -68,6 +75,7 @@ const projects = [
     technologies: "HTML, CSS, JS, Node JS, MySQL",
     image: "projects/sports.png", 
     link: "#",
+    label: "Deploying Soon...",
   },
   {
     title: "Search Cart",
@@ -75,7 +83,8 @@ const projects = [
       "Smart marketplace where users find nearby products based on distance, price, and availability. Features shop owner inventory management, sales analytics, and dynamic location-based searching via Leaflet.js.",
     technologies: "HTML, CSS, JS, Node JS, MongoDB, Leaflet",
     image: "projects/search-cart.png", 
-    link: "#",
+    link: "https://search-cart.vercel.app/",
+    label: "View Project",
   },
   {
     title: "Mini Projects",
@@ -83,7 +92,8 @@ const projects = [
       "Collection of engaging interactive tools including To-Do List, Book Management System, Typing Test, Ball in a Circle, Tic-Tac-Toe, Sliding Puzzle etc. Demonstrates core development skills while enhancing user engagement through fun, practical applications.",
     technologies: "HTML, CSS, JS, MERN Stack",
     image: "projects/mini-projects.png", 
-    link: "#",
+    link: "https://mini-projects-hub.vercel.app/",
+    label: "View Projects",
   },
 ];
 

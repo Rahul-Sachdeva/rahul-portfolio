@@ -25,7 +25,7 @@ const achievements: Achievement[] = [
     description: "Solved 450+ questions with a 1700+ contest rating, received many top leetcoder badges",
     date: "Ongoing",
     skills: ["Data Structures", "Problem Solving", "Optimal Thinking"],
-    link: "#", // Add a LeetCode profile link
+    link: "https://drive.google.com/file/d/1EWdZfNn2dTn17F3GNi9-QxA14MofQLTD/view?usp=drive_link", // Google Drive link for hackathon certificates
     logo: "/skills/leetcode.png",
   },
   {
@@ -33,7 +33,7 @@ const achievements: Achievement[] = [
     description: "Competed in National & Regional Hackathons like SIH, Hack-n-Win, HackTU 6.0, GNE Hackathon etc.",
     date: "Ongoing",
     skills: ["Rapid Prototyping", "Competitive Coding", "Teamwork & Leadership"],
-    link: "#", // Google Drive link for hackathon certificates
+    link: "https://drive.google.com/file/d/1vNKOgM4ROU1KTZp41bIiAOF0juYBfA7E/view?usp=drive_link",
     logo: "/skills/hackathon.png",
   },
   {
@@ -41,7 +41,7 @@ const achievements: Achievement[] = [
     description: "Awarded Best Overall Prize in a Peer-to-Peer Learning Event. Adventure Game using C# & Unity.",
     date: "2023",
     skills: ["Game Development", "Rapid Learning", "Creativity"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1S7MlBgFfr3pEppJI8EwI848NIFgdK9n4/view?usp=drive_link",
     logo: "/skills/unity.png",
   },
   {
@@ -49,7 +49,7 @@ const achievements: Achievement[] = [
     description: "Certified by Ansh Infotech in Artificial Intelligence training.",
     date: "2024",
     skills: ["AI", "Machine Learning", "Deep Learning"],
-    link: "#", // Certification link
+    link: "https://drive.google.com/file/d/1YVjJTabFSJgb6_qoQVidYTdkG14rtuGh/view?usp=drive_link", // Certification link
     logo: "/skills/skill_india.jpg",
   },
   {
@@ -57,7 +57,7 @@ const achievements: Achievement[] = [
     description: "Organized Placement Activities and Made technical projects at Training and Placement Cell, GNDEC.",
     date: "2024-Present",
     skills: ["Leadership", "Communication", "Event Management"],
-    link: "#",
+    link: "https://tnpgndec.com/executiveMembers",
     logo: "/tnplogo.png",
   },
   {
@@ -65,7 +65,7 @@ const achievements: Achievement[] = [
     description: "Secured overall Second position in the CT University Ideathon.",
     date: "2024",
     skills: ["Innovation", "Idea-Pitching", "Problem-Solving"],
-    link: "#", // Add a drive link if needed
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7194236097655132160?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0sSNkBcNfCycZ3CbC2AurD-Y5G_XKEDh8", // Add a drive link if needed
     logo: "/skills/ideathon.png",
   },
   {
@@ -73,7 +73,7 @@ const achievements: Achievement[] = [
     description: "Won the Quizpedia event at Tech Urja, an intercollege competition.",
     date: "2023",
     skills: ["Critical Thinking", "Technical Knowledge", "Fast Decision Making"],
-    link: "#",
+    link: "https://drive.google.com/file/d/1VF_xSO_ovV2YTC8lLNkecatEhitsu4hX/view?usp=drive_link",
     logo: "/first.png",
   },
   {
@@ -81,7 +81,7 @@ const achievements: Achievement[] = [
     description: "View all my Certifications including LeetCode Badges, Hackathons, Intercollege Event Certifications, and much more.",
     date: "Ongoing",
     skills: ["Competitions", "Problem Solving", "Teamwork"],
-    link: "https://drive.google.com/folderxyz", // Google Drive link to grouped certificates
+    link: "https://drive.google.com/drive/folders/11z7PH5bRh5a96CKs6eaUuZ4yh8pOz11E", // Google Drive link to grouped certificates
     logo: "/skills/prize.png",
   },
 ];
@@ -89,7 +89,7 @@ const achievements: Achievement[] = [
 const Achievements = () => {
   return (
     <div id="achievements" className="w-[75%] mr-0 z-20 flex flex-col items-center">
-    <div className="w-full flex flex-col items-center text-white py-12">
+    <div className="w-full flex flex-col justify-center items-center text-white py-12">
       <h2 className="text-4xl font-bold mb-4">Achievements</h2>
         <style>
         {`
@@ -129,7 +129,7 @@ const Achievements = () => {
             <motion.div
               whileHover={{ scale: 1.02}}
               transition={{ duration: 0.3 }}
-              className="bg-[#2a1d4c] rounded-2xl mt-8 mb-8 p-6 h-[400px] shadow-lg border border-gray-600 text-center"
+              className="bg-[#2a1d4c] flex flex-col justify-center rounded-2xl mt-8 mb-8 px-6 py-2 h-[400px] shadow-lg border border-gray-600 text-center"
             >
               <div className="flex justify-center items-center">
                 <Image src={achievement.logo} alt="Logo" width={48} height={48} className="w-12 h-12 mb-4 rounded bg-white p-[2px]" />
@@ -142,7 +142,7 @@ const Achievements = () => {
                   <li key={i}>• {skill}</li>
                 ))}
               </ul>
-              <a href={achievement.link} className="mt-4 inline-block bg-gray-800 px-4 py-2 rounded-lg text-sm">
+              <a href={achievement.link} target="_blank" className="mt-4 inline-block bg-[#151030] px-4 py-2 rounded-lg text-sm">
                 View Credential
               </a>
             </motion.div>

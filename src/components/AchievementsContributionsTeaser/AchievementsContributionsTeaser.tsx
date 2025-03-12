@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FaAward, FaGraduationCap, FaLaptopCode, FaLightbulb, FaTrophy } from 'react-icons/fa';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Link from 'next/link';
 
 const achievements = [
   {
@@ -32,6 +31,14 @@ const AchievementsContributionTeaser = () => {
   useEffect(() => {
       AOS.init({ duration: 800 }); // Initialize AOS for scroll animations
     }, []);
+
+    const scrollToSection = (id: string) => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
   return (
     <div className="w-[95%] mt-12 flex flex-col justify-center items-center bg-transparent text-white p-6">
       <h2 className="text-2xl font-bold flex items-center mb-6 text-glow" data-aos="fade-down">
@@ -56,17 +63,16 @@ const AchievementsContributionTeaser = () => {
           </motion.div>
         ))}
       </div>
-      <Link href="#achievements" passHref>
         <motion.button
           className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
+          onClick={() => scrollToSection("achievements")}
         >
           View All Achievements
         </motion.button>
-      </Link>
-
+     
     </div>
   );
 };

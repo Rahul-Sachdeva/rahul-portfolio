@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -10,7 +9,8 @@ const projects = [
     title: "Contacts TNP",
     description: "A contact management system for T&P Cell with role-based access and CSV functionality.",
     imageUrl: "projects/contacts-tnp-mobile.png",
-    link: "#",
+    link: "https://contacts.tnpgndec.com",
+    label: "View Project",
   },
   {
     id: "project2",
@@ -18,41 +18,49 @@ const projects = [
     description: "An upcoming official T&P Cell hub featuring placement updates, job listings, and student profiles.",
     imageUrl: "projects/tnp-website-mobile.png",
     link: "#",
+    label: "Working...",
   },
   {
     id: "project3",
     title: "Fuzzy Search",
     description: "An AI-powered criminal record system with fuzzy matching, voice-to-text, and data analytics.",
     imageUrl: "projects/fuzzy-search-mobile.png",
-    link: "#",
+    link: "https://fuzzy-search-eight.vercel.app",
+    label: "View Project",
   },
   {
     id: "project4",
     title: "Edustation",
     description: "An AI-driven e-learning platform with smart recommendations and real-time progress tracking.",
     imageUrl: "projects/edustation-mobile.png",
-    link: "#",
+    link: "https://edustation.vercel.app",
+    label: "View Project",
   },
   {
     id: "project5",
-    title: "Portfolio",
-    description: "A sleek portfolio with animations, project showcase, achievements, and interactive resume.",
-    imageUrl: "projects/portfolio-mobile.png",
-    link: "#",
-  },
-  {
-    id: "project6",
     title: "Club Hub",
     description: "An event platform for real-time updates, registration, and an admin dashboard.",
     imageUrl: "projects/club-hub-mobile.png",
     link: "#",
+    label: "Working...",
+  },
+  {
+    id: "project6",
+    title: "Portfolio",
+    description: "A sleek portfolio with animations, project showcase, achievements, and interactive resume.",
+    imageUrl: "projects/portfolio-mobile.png",
+    link: "https://rahul-portfolio-lake.vercel.app",
+    label: "View Project",
   },
 ];
 
 
 
-const scrollToSection = (id:string) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+const scrollToSection = (id: string) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 };
 
 const ProjectsSlide = () => {
@@ -93,12 +101,14 @@ const ProjectsSlide = () => {
                   {project.title}
                 </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
-                <motion.span
+                <motion.a
+                  href={project.link}
+                  target={project.link!="#"?"_blank":"_self"}
                   className="inline-block bg-yellow-500 text-gray-900 font-semibold px-4 py-2 rounded-full shadow-lg"
                   whileHover={{ scale: 1.1 }}
                 >
-                  View Project
-                </motion.span>
+                  {project.label}
+                </motion.a>
               </div>
             </div>
           </motion.div>
@@ -107,16 +117,15 @@ const ProjectsSlide = () => {
 
       {/* Scroll to Projects Button */}
       <div className="flex justify-center mt-12">
-        <Link href="#projects" passHref>
           <motion.button
             className="bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 px-4 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transition-transform transform hover:scale-105"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.5 }}
+            onClick={() => scrollToSection("projects")}
           >
             View All Projects
           </motion.button>
-        </Link>
       </div>
     </div>
   );

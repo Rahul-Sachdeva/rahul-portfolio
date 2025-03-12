@@ -27,7 +27,7 @@ const Stars = () => {
 
   return (
     <Points ref={ref} positions={positions}>
-      <PointMaterial size={0.01} color="white" transparent />
+      <PointMaterial size={0.007} color="white" transparent />
     </Points>
   );
 };

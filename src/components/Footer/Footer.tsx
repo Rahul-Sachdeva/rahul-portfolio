@@ -7,6 +7,13 @@ import Link from "next/link";
 
 export default function Footer() {
 
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     return (
         <motion.footer
             initial={{ opacity: 0, y: 50 }}
@@ -21,28 +28,30 @@ export default function Footer() {
                 [
                     { label: "Home", link: "home" },
                     { label: "Achievements", link: "achievements" },
-                    { label: "Skills + Projects", link: "projects" },
+                    { label: "Skills", link: "skills" },
+                    { label: "Projects", link: "projects" },
                     { label: "Resume", link: "resume" },
+                    { label: "Contributions", link: "contributions" },
                     { label: "Contact", link: "contact" }
                 ].map((item, index) => (
-                    <Link
+                    <a
                         key={index}
-                        href={`#${item.link}`}
                         className="hover:text-yellow-400 cursor-pointer hover:scale-110 transition-opacity duration-200 opacity-80 hover:opacity-100"
+                        onClick={() => scrollToSection(item.link)}
                     >
                         {item.label}
-                    </Link>
+                    </a>
                 ))}
             </nav>
 
             {/* Social Icons */}
             <div className="flex space-x-6 text-xl mb-6">
                 {[
-                    { icon: <FaGithub />, link: "https://github.com/yourgithub" },
-                    { icon: <FaLinkedin />, link: "https://linkedin.com/in/yourlinkedin" },
-                    { icon: <FaEnvelope />, link: "mailto:your.email@example.com" },
-                    { icon: <SiLeetcode />, link: "https://leetcode.com/yourleetcode" },
-                    { icon: <FaInstagram />, link: "https://leetcode.com/yourleetcode" }
+                    { icon: <FaGithub />, link: "https://github.com/Rahul-Sachdeva" },
+                    { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/rahul-sachdeva-961862247" },
+                    { icon: <FaEnvelope />, link: "mailto:rahulsachdeva112005@gmail.com" },
+                    { icon: <SiLeetcode />, link: "https://leetcode.com/u/Rahul_Sachdeva" },
+                    { icon: <FaInstagram />, link: "https://www.instagram.com/rahul_sachdeva_0001" }
                 ].map((social, index) => (
                     <a
                         key={index}

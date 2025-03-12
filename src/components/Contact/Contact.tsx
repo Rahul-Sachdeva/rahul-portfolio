@@ -120,13 +120,13 @@ const Contact = () => {
           </button>
         </form>
         <div className="flex gap-4 mt-4">
-          <Link href="mailto:your.email@example.com" className="hover:text-purple-400">
+          <Link href="mailto:rahulsachdeva112005@gmail.com" className="hover:text-purple-400">
             📧 Email
           </Link>
-          <Link href="tel:+911234567890" className="hover:text-purple-400">
+          <Link href="tel:+919517819205" className="hover:text-purple-400">
             📞 Call
           </Link>
-          <Link href="https://linkedin.com/in/yourprofile" className="hover:text-purple-400">
+          <Link href="https://www.linkedin.com/in/rahul-sachdeva-961862247/" className="hover:text-purple-400">
             💼 LinkedIn
           </Link>
         </div>

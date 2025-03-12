@@ -58,11 +58,14 @@ const Experience = () => {
               }`}
             >
               {exp.logo && (
+                <div className="relative w-12 h-12">
                 <Image
                   src={exp.logo}
                   alt={exp.company}
-                  className="w-8 h-8 rounded-full"
+                  fill
+                  className="rounded-full"
                 />
+                </div>
               )}
               <div className="text-left">
                 <h3 className="font-semibold">{exp.role}</h3>
@@ -88,11 +91,14 @@ const Experience = () => {
             </p>
           </div>
           {selectedExperience.logo && (
+            <div className="relative w-16 h-16">
             <Image
               src={selectedExperience.logo}
               alt={selectedExperience.company}
-              className="w-16 h-16 rounded-full"
+              fill
+              className="rounded-full"
             />
+            </div>
           )}
         </div>
         <ul className="list-disc list-inside mt-4 space-y-2 text-gray-300">
