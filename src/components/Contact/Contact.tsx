@@ -136,7 +136,7 @@ const Contact = () => {
       </div>
 
       {/* Right Section: 3D Earth & Location */}
-      <div className="md:w-1/2 flex flex-col items-center">
+      <div className="md:w-1/2 hidden lg:flex flex-col items-center">
         {/* 3D Earth */}
         <div className="max-w-[75vw] w-[500px] h-[550px] md:w-[500px] md:h-[550px]">
           <Canvas camera={{ position: [0, 0, 3] }}> {/* Initial zoom level */}

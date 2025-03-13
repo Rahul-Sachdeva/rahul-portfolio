@@ -158,7 +158,7 @@ export default function GifCarousel() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-6 z-50 right-6 bg-yellow-400 p-3 rounded-full shadow-lg hover:bg-yellow-300 transition-all animate-bounce"
+        className="fixed bottom-[60px] right-3 md:bottom-6 z-50 md:right-6 bg-yellow-400 p-3 rounded-full shadow-lg hover:bg-yellow-300 transition-all animate-bounce"
       >
         <FaArrowUp className="text-gray-900 text-lg" />
       </motion.button>

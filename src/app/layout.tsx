@@ -4,6 +4,7 @@ import "./globals.css";
 import FloatingStars from "@/components/FloatingStars/FloatingStars";
 import Sidebar from "@/components/Navbar/Navbar";
 import { Toaster } from "@/components/ui/sonner"
+import MobileNavbar from "@/components/MobileNavbar/MobileNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,11 +34,14 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 w-full h-full z-10">
           <FloatingStars/>
         </div>
+        <div className="fixed bottom-0 w-full lg:hidden h-[60px] z-[100] bg-black border-t-2 border-white">
+          <MobileNavbar/>
+        </div>
         <div className="flex">
           <div className="w-0 lg:w-[300px] h-[100vh] max-h-screen z-[100]">
             <Sidebar/> 
           </div>
-          <div className="flex flex-col h-full bg-[#050816] overflow-hidden w-full md:w-[calc(100%-300px)]">
+          <div className="flex flex-col h-full bg-[#050816] mb-[60px] lg:mb-0 overflow-hidden w-full md:w-[calc(100%-300px)]">
             {children}
             <Toaster />
           </div>
