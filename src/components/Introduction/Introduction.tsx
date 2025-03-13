@@ -1,6 +1,7 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const IntroductionSlide = () => {
 
@@ -12,7 +13,7 @@ const IntroductionSlide = () => {
   };
 
   return (
-    <div className="min-w-xl max-w-xl mx-auto p-6 text-white flex flex-col items-center justify-center h-screen">
+    <div className="md:min-w-xl md:max-w-xl mx-auto md:p-6 text-white flex flex-col items-center justify-center mt-10 md:mt-0 md:h-screen">
       {/* Greeting with Animated Waving Hand */}
       <motion.h1
         className="text-5xl font-bold mb-4 flex items-center"
@@ -34,9 +35,13 @@ const IntroductionSlide = () => {
 
       <br/> <strong> Welcome to my Galaxy 🚀 </strong>
 
+      <div className="block lg:hidden text-xl mt-4">&lt;Rahul Sachdeva /&gt;</div>
+      <div className="block lg:hidden mb-4 w-60 h-[264px] mt-2 rounded-[30px] overflow-hidden transform transition-transform duration-300 hover:scale-105">
+        <Image src="/rahul-sachdeva.png" alt="Rahul" fill className="w-full h-full object-cover" />
+      </div>
       {/* Typewriter Effect */}
       <motion.div
-        className="text-2xl mb-6"
+        className="text-xl md:text-2xl mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}

@@ -51,7 +51,7 @@ export default function SkillsSection() {
     <TooltipProvider>
       <motion.div
         id="skills"
-        className="skills-container w-3/4 z-20 mx-auto flex flex-col justify-center text-white py-10"
+        className="skills-container w-3/4 z-20 mx-auto flex flex-col justify-center text-white lg:py-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -71,7 +71,7 @@ export default function SkillsSection() {
           &lt;Programming&gt;
         </motion.h2>
 
-        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-20 gap-y-5">
+        <div className="xl:mx-40 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-5">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -85,14 +85,14 @@ export default function SkillsSection() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{skill.name}</p>
+                  <p className="xl:block hidden">{skill.name}</p>
                 </TooltipContent>
               </Tooltip>
             </motion.div>
           ))}
         </div>
 
-        <motion.h2 className="text-3xl font-bold mt-6 neon-text text-right">
+        <motion.h2 className="text-3xl font-bold mt-6 neon-text xl:text-right">
           &lt;/Programming&gt;
         </motion.h2>
 
@@ -101,7 +101,7 @@ export default function SkillsSection() {
           &lt;SoftSkills&gt;
         </motion.h2>
 
-        <div className="mx-40 grid grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-x-20 gap-y-5">
+        <div className="xl:mx-40 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-5">
           {softSkills.map((skill, index) => (
             <motion.div
               key={index}
@@ -115,14 +115,14 @@ export default function SkillsSection() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>{skill.name}</p>
+                  <p className="xl:block hidden">{skill.name}</p>
                 </TooltipContent>
               </Tooltip>
             </motion.div>
           ))}
         </div>
 
-        <motion.h2 className="text-3xl font-bold mt-6 neon-text text-right">
+        <motion.h2 className="text-3xl font-bold mt-6 neon-text xl:text-right">
           &lt;/SoftSkills&gt;
         </motion.h2>
       </motion.div>

@@ -17,12 +17,12 @@ const ContributionsSlide = () => {
       }
     };
   return (
-    <div className="w-[95%] mt-12 flex flex-col items-center bg-transparent text-white p-6">
+    <div className="w-[95%] md:mt-12 flex flex-col items-center bg-transparent text-white pt-6 pl-6 md:p-6">
       <h2 className="text-2xl font-bold flex items-center text-glow" data-aos="fade-down">
         <FaGraduationCap className="mr-2 text-yellow-400 animate-pulse" />
         Contributions
       </h2>
-      <div className="example-container mt-6 w-full pr-6 h-[580px] overflow-y-scroll">
+      <div className="md:example-container mt-6 w-full md:pr-6 md:h-[580px] overflow-y-scroll">
         <GitHubContributionGraph/>
         <LeetCodeStatsCard/>      
         {/* Scroll to Projects Button */}

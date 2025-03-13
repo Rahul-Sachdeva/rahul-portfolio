@@ -34,13 +34,13 @@ export default function RootLayout({
           <FloatingStars/>
         </div>
         <div className="flex">
-          <div className="w-[300px] h-[100vh] max-h-screen z-[100]">
+          <div className="w-0 lg:w-[300px] h-[100vh] max-h-screen z-[100]">
             <Sidebar/> 
           </div>
-        <div className="flex flex-col h-full bg-[#050816] overflow-hidden w-[calc(100%-300px)]">
-          {children}
-          <Toaster />
-        </div>
+          <div className="flex flex-col h-full bg-[#050816] overflow-hidden w-full md:w-[calc(100%-300px)]">
+            {children}
+            <Toaster />
+          </div>
         </div>
       </body>
     </html>

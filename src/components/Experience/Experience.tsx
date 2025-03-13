@@ -36,7 +36,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section className="max-w-xl mx-auto mt-12 p-6 text-white">
+    <section className="max-w-xl mx-auto mt-0 md:mt-12 p-6 text-white">
       <h2 className="text-2xl font-bold mb-6 text-center" data-aos="fade-down">
         Experience
       </h2>

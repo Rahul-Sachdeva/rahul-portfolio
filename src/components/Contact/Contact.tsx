@@ -9,10 +9,10 @@ import { FormEvent, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner"
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive'
 
  const Earth = () => {
   const earthTexture = useLoader(TextureLoader, "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg");
-
   return (
     <mesh>
       <sphereGeometry args={[1, 64, 64]} />
@@ -22,6 +22,9 @@ import Image from "next/image";
 };
 
 const Contact = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)'
+  })
   const [loading, setLoading] = useState<boolean>(false); 
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -72,7 +75,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="z-20 mx-auto flex flex-col md:flex-row items-center justify-between p-8 text-white">
+    <div id="contact" className="z-20 max-w-[90vw] mx-auto flex flex-col md:flex-row items-center justify-between mb-5 md:p-8 text-white">
       {/* Left Section: Contact Form */}
       <div className="md:w-1/2 space-y-6 p-6 bg-[#2a1d4c] rounded-lg shadow-lg">
         <h2 className="text-4xl font-bold">Contact.</h2>
@@ -135,11 +138,11 @@ const Contact = () => {
       {/* Right Section: 3D Earth & Location */}
       <div className="md:w-1/2 flex flex-col items-center">
         {/* 3D Earth */}
-        <div className="w-[500px] h-[550px] md:w-[500px] md:h-[550px]">
+        <div className="max-w-[75vw] w-[500px] h-[550px] md:w-[500px] md:h-[550px]">
           <Canvas camera={{ position: [0, 0, 3] }}> {/* Initial zoom level */}
             <OrbitControls 
               enableZoom={true} 
-              minDistance={2}  // Minimum zoom (closer to Earth)
+              minDistance={isDesktopOrLaptop? 2:4}  // Minimum zoom (closer to Earth)
               maxDistance={6}  // Maximum zoom (far away)
               autoRotate 
               autoRotateSpeed={1.5} 

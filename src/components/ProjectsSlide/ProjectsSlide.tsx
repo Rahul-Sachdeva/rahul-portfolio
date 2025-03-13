@@ -68,16 +68,16 @@ const ProjectsSlide = () => {
       AOS.init({ duration: 800 }); // Initialize AOS for scroll animations
     }, []);
   return (
-    <div className="w-full max-w-5xl mt-16 mx-auto px-6">
+    <div className="w-full max-w-5xl mt-4 md:mt-16 mx-auto px-6">
       <motion.h2
-        className="text-4xl font-bold mb-12 text-white text-center"
+        className="text-4xl font-bold mb-4 md:mb-12 text-white text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         Projects 🚀
       </motion.h2>
-      <div className="py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="py-2 px-10 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -93,7 +93,7 @@ const ProjectsSlide = () => {
               <motion.img
                 src={project.imageUrl}
                 alt={project.title}
-                className="w-full h-52 object-fill transition-transform duration-300 transform group-hover:scale-110"
+                className="w-full h-[280px] md:h-52 object-fill transition-transform duration-300 transform group-hover:scale-110"
                 whileHover={{ scale: 1.1 }}
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">

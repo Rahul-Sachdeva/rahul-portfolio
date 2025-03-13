@@ -40,7 +40,7 @@ const AchievementsContributionTeaser = () => {
     };
 
   return (
-    <div className="w-[95%] mt-12 flex flex-col justify-center items-center bg-transparent text-white p-6">
+    <div className="w-[95%] md:mt-12 flex flex-col justify-center items-center bg-transparent text-white p-6">
       <h2 className="text-2xl font-bold flex items-center mb-6 text-glow" data-aos="fade-down">
         <FaGraduationCap className="mr-2 text-yellow-400 animate-pulse" />
         Achievements

@@ -74,18 +74,18 @@ export default function GifCarousel() {
     <>
     <div
       id="home"
-      className="relative ml-14 z-20 w-full h-screen flex justify-between"
+      className="relative md:ml-14 z-20 w-full lg:h-screen flex flex-col-reverse lg:flex-row justify-between"
     >
       {/* Title and Description */}
       <div className="w-full">{slides[index].content}</div>
 
       {/* Carousel */}
-      <div className="flex flex-col justify-center mt-4 mr-10 items-center z-20">
+      <div className="flex flex-col justify-center mt-4 md:mr-10 items-center z-20">
         <h2 className="text-2xl text-white mb-5 font-bold flex items-center text-glow">
           Explore My Journey{" "}
           <IoIosBicycle size={40} className="ml-1 text-white animate-pulse" />
         </h2>
-        <div className="relative w-[600px] h-[530px] border-2 border-white overflow-hidden rounded-[50px]">
+        <div className="relative w-[340px] sm:w-[450px] xl:w-[600px] h-[400px] lg:h-[530px] border-2 border-white overflow-hidden rounded-[50px]">
           <AnimatePresence>
             {/* Next Button with Icon */}
             <button
@@ -114,7 +114,7 @@ export default function GifCarousel() {
                 />
 
                 {/* Cyclist */}
-                <div className="absolute top-48 left-48">
+                <div className="absolute top-32 xl:top-48 left-24 xl:left-48">
                   <Image
                     src={showGifs ? "/person.gif" : "/person.png"}
                     alt="Cyclist"
@@ -124,10 +124,10 @@ export default function GifCarousel() {
                 </div>
 
                 {/* Birds - Animation persists smoothly */}
-              <div className={`absolute top-20 left-4 ${birdPaused ? "bird-animation" : "bird-paused"}`}>
+              <div className={`absolute top-10 md:top-20 left-4 ${birdPaused ? "bird-animation" : "bird-paused"}`}>
                 <Image src={"/bird1.gif"} alt="Bird 1" width={100} height={100} />
               </div>
-              <div className={`absolute top-20 left-[400px] ${birdPaused ? "bird-animation2" : "bird-paused2"}`}>
+              <div className={`absolute hidden md:block top-20 left-[300px] xl:left-[400px] ${birdPaused ? "bird-animation2" : "bird-paused2"}`}>
                 <Image src={"/bird2.gif"} alt="Bird 2" width={100} height={100} />
               </div>
             

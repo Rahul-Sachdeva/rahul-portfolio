@@ -28,7 +28,7 @@ const SkillsProjectsSection: React.FC = () => {
     }
   };
   return (
-    <div className="min-w-full min-h-screen flex flex-col items-center mt-12 bg-transparent text-white p-6">
+    <div className="min-w-full md:min-h-screen flex flex-col items-center md:mt-12 bg-transparent text-white p-6">
       <h2 className="text-2xl font-bold mb-6 text-center" data-aos="fade-down">
         Skills
       </h2>

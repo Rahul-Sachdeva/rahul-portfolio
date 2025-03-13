@@ -64,7 +64,7 @@ const ContributionSection = () => {
   const leetcodeUsername = "Rahul_Sachdeva";
 
   return (
-    <div id="contributions" className="pt-10 z-20">
+    <div id="contributions" className="pt-10 z-20 max-w-[95vw]">
     <div className="bg-[#2a1d4c] z-20 text-white p-6 mb-10 rounded-lg shadow-lg">
       <motion.h1
           className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
@@ -93,7 +93,7 @@ const ContributionSection = () => {
           }`}
           onClick={() => setActiveTab("github")}
         >
-          <p className="px-1 text-xl">GitHub</p>
+          <p className="px-1 text-xl xl:block hidden">GitHub</p>
           <FaGithub size={25}/>
         </button>
         <button
@@ -102,7 +102,7 @@ const ContributionSection = () => {
           }`}
           onClick={() => setActiveTab("leetcode")}
         >
-          <p className="px-1 text-xl">LeetCode</p>
+          <p className="px-1 text-xl xl:block hidden">LeetCode</p>
           <SiLeetcode size={25}/>
         </button>
       </div>

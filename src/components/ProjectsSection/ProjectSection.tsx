@@ -98,7 +98,7 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  const [layout, setLayout] = useState<"horizontal" | "vertical">("horizontal");
+  const [layout, setLayout] = useState<"horizontal" | "vertical">("vertical");
 
   // Load preference from localStorage
   useEffect(() => {
@@ -117,14 +117,14 @@ const ProjectsSection = () => {
     <motion.div id="projects" className="p-6 z-20 w-[90%] flex flex-col justify-center ">
       {/* Toggle Button */}
       <motion.h1
-        className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
+        className="text-4xl font-extrabold mb-6 text-center text-[#8A2BE2]"
         animate={{ opacity: [0, 1], scale: [0.9, 1] }}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
         Projects
       </motion.h1>
 
-      <span className="flex justify-end mb-4">
+      <span className="hidden lg:flex justify-end mb-4">
         <button
           onClick={toggleLayout}
           className="px-4 py-2 bg-gray-700 text-white rounded-md transition hover:bg-gray-600"

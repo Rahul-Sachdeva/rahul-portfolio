@@ -8,9 +8,9 @@ const PdfViewer = dynamic(() => import("@/components/ResumeViewer/ResumeViewer")
 
 const ResumePage = () => {
   return (
-    <motion.div id="resume" className="mx-auto z-20 flex flex-col items-center justify-center min-h-screen p-8">
+    <motion.div id="resume" className="w-full md:mx-auto z-20 flex flex-col items-center justify-center md:min-h-screen md:p-8">
       <motion.h1
-          className="text-4xl font-extrabold mb-10 text-center text-[#8A2BE2]"
+          className="text-4xl font-extrabold mb-4 md:mb-10 text-center text-[#8A2BE2]"
           animate={{ opacity: [0, 1], scale: [0.9, 1] }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >

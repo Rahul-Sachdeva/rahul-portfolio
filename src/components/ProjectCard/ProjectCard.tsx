@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         src={image}
         alt={title}
         className={`rounded-lg object-fill ${
-          layout === "horizontal" ? "w-1/3 h-[200px]" : "w-full h-[300px]"
+          layout === "horizontal" ? "w-1/3 h-[200px]" : "w-full h-[150px] lg:h-[300px]"
         }`}
         whileHover={{ opacity: 0.8 }}
       />

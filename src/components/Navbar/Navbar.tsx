@@ -65,7 +65,7 @@ const Sidebar: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] fixed max-h-screen w-[300px] bg-[#2a1d4c] text-white flex flex-col items-center shadow-lg">
+    <div className="h-[100vh] md:fixed max-h-screen w-0 md:w-[300px] bg-[#2a1d4c] text-white hidden md:flex flex-col items-center shadow-lg">
       <div className="text-xl mt-4">&lt;Rahul Sachdeva /&gt;</div>
       <div className="w-60 h-[264px] mt-2 rounded-[30px] overflow-hidden transform transition-transform duration-300 hover:scale-105">
         <Image src="/rahul-sachdeva.png" alt="Rahul" fill className="w-full h-full object-cover" />

@@ -40,15 +40,15 @@ const Education = () => {
   }, []);
   
   return (
-    <section className="max-w-3xl mx-auto p-6 text-white mt-12">
+    <section className="max-w-3xl mx-auto px-6 md:p-6 text-white mt-8 md:mt-12">
       {/* Title */}
-      <h2 className="text-2xl font-bold flex items-center mb-6 text-glow" data-aos="fade-down">
+      <h2 className="text-2xl font-bold flex justify-center items-center mb-4 md:mb-6 text-glow" data-aos="fade-down">
         <FaGraduationCap className="mr-2 text-yellow-400 animate-pulse" />
         Education
       </h2>
 
       {/* Timeline Container */}
-      <div className="border-l-4 border-yellow-400 pl-6 space-y-8 relative">
+      <div className="border-l-4 border-yellow-400 pl-6 space-y-4 md:space-y-8 relative">
         {educationData.map((edu, index) => (
           <motion.div
             key={index}

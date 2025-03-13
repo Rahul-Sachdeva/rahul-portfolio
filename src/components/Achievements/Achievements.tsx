@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import 'swiper/css/effect-coverflow';
 import Image from "next/image";
+import { useMediaQuery } from 'react-responsive'
 // import 'swiper/css/effect-flip';
 // import 'swiper/css/navigation';
 
@@ -87,6 +88,9 @@ const achievements: Achievement[] = [
 ];
 
 const Achievements = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1280px)'
+  })
   return (
     <div id="achievements" className="w-[75%] mr-0 z-20 flex flex-col items-center">
     <div className="w-full flex flex-col justify-center items-center text-white py-12">
@@ -104,7 +108,7 @@ const Achievements = () => {
         spaceBetween={30}
         loop={true}
         centeredSlides={true}  
-        slidesPerView={3}
+        slidesPerView={isDesktopOrLaptop? 3 : 1}
         coverflowEffect={{
             rotate: 30,
             stretch: 0,
@@ -129,7 +133,7 @@ const Achievements = () => {
             <motion.div
               whileHover={{ scale: 1.02}}
               transition={{ duration: 0.3 }}
-              className="bg-[#2a1d4c] flex flex-col justify-center rounded-2xl mt-8 mb-8 px-6 py-2 h-[400px] shadow-lg border border-gray-600 text-center"
+              className="bg-[#2a1d4c] flex flex-col justify-center rounded-2xl mt-8 mb-8 px-6 py-2 h-[400px] lg:[h-450px] xl:h-[400px] shadow-lg border border-gray-600 text-center"
             >
               <div className="flex justify-center items-center">
                 <Image src={achievement.logo} alt="Logo" width={48} height={48} className="w-12 h-12 mb-4 rounded bg-white p-[2px]" />
