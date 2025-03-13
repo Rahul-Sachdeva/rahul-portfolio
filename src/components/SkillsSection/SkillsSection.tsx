@@ -17,22 +17,22 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { icon: "/skills/c++.svg", name: "C++" },
-  { icon: "/skills/css.png", name: "CSS" },
-  { icon: "/skills/express.png", name: "Express" },
-  { icon: "/skills/figma.png", name: "Figma" },
-  { icon: "/skills/git.png", name: "Git" },
   { icon: "/skills/html.png", name: "HTML" },
+  { icon: "/skills/css.png", name: "CSS" },
   { icon: "/skills/javascript.png", name: "JavaScript" },
-  { icon: "/skills/mongodb.png", name: "MongoDB" },
-  { icon: "/skills/material-ui.png", name: "Material UI" },
-  { icon: "/skills/mysql.png", name: "MySQL" },
-  { icon: "/skills/nextjs.png", name: "NextJS" },
-  { icon: "/skills/nodejs.png", name: "NodeJS" },
-  { icon: "/skills/python.png", name: "Python" },
-  { icon: "/skills/reactjs.png", name: "ReactJS" },
-  { icon: "/skills/tailwind.png", name: "Tailwind CSS" },
   { icon: "/skills/typescript.png", name: "TypeScript" },
+  { icon: "/skills/c++.svg", name: "C++" },
+  { icon: "/skills/python.png", name: "Python" },
+  { icon: "/skills/express.png", name: "Express" },
+  { icon: "/skills/nodejs.png", name: "NodeJS" },
+  { icon: "/skills/reactjs.png", name: "ReactJS" },
+  { icon: "/skills/nextjs.png", name: "NextJS" },
+  { icon: "/skills/mongodb.png", name: "MongoDB" },
+  { icon: "/skills/mysql.png", name: "MySQL" },
+  { icon: "/skills/material-ui.png", name: "Material UI" },
+  { icon: "/skills/tailwind.png", name: "Tailwind CSS" },
+  { icon: "/skills/git.png", name: "Git" },
+  { icon: "/skills/figma.png", name: "Figma" },
 ];
 
 const softSkills: Skill[] = [
